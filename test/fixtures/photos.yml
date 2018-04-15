@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tank_location_id: 
+  user_id: 
+
+two:
+  tank_location_id: 
+  user_id: 

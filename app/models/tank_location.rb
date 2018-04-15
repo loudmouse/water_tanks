@@ -1,0 +1,2 @@
+class TankLocation < ApplicationRecord
+end
