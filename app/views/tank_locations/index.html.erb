@@ -1,2 +1,19 @@
-<h1>TankLocations#index</h1>
-<p>Find me in app/views/tank_locations/index.html.erb</p>
+<h1>TankLocations</h1>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Lat</th>
+    <th>Long</th>
+  </tr>
+  <% @tank_locations.each do |tl| %>
+    <tr>
+      <td><%= tl.address %></td>
+      <td><%= tl.longitude %></td>
+      <td><%= tl.latitude %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+

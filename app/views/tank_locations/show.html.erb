@@ -1,5 +1,8 @@
 <h1>Tank Location</h1>
+<h3>Lat: <%= @tank_location.latitude %></h3>
+<h3>Long: <%= @tank_location.longitude %></h3>
 <h3><%= @tank_location.address %></h3>
+
 
 <%= link_to 'Edit', edit_tank_location_path(@tank_location) %> |
 <%= link_to 'Back', tank_locations_path %>
