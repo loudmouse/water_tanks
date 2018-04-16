@@ -1,0 +1,32 @@
+<%= form_for(@tank_location, local: true) do |form| %>
+ <% if tank_location.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(tank_location.errors.count, "error") %> prohibited this tank_location from being saved:</h2>
+
+     <ul>
+     <% tank_location.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+ <div class="field">
+   <%= form.label :latitude %>
+   <%= form.text_field :latitude, id: :tank_location_latitude %>
+ </div>
+
+ <div class="field">
+   <%= form.label :longitude %>
+   <%= form.text_field :longitude, id: :tank_location_longitude %>
+ </div>
+
+ <div class="field">
+   <%= form.label :address %>
+   <%= form.text_field :address, id: :tank_location_address %>
+ </div>
+
+ <div class="actions">
+   <%= form.submit %>
+ </div>
+<% end %>
