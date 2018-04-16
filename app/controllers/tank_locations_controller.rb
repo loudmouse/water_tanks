@@ -4,12 +4,12 @@ class TankLocationsController < ApplicationController
   end
 
   def create
-    @tank_location = TankLocation.new(location_params)
+    @tank_location = TankLocation.new(tank_location_params)
     if @tank_location.save
       redirect_to @tank_location
     else
       @tank_location.errors.full_messages
-      render new
+      render "new"
     end
   end
 
@@ -18,7 +18,7 @@ class TankLocationsController < ApplicationController
       redirect_to @tank_location
     else
       @tank_location.errors.full_messages
-      render new
+      render "new"
     end
   end
 
@@ -30,4 +30,10 @@ class TankLocationsController < ApplicationController
 
   def index
   end
+
+  private
+
+    def tank_location_params
+      params.require(:tank_location).permit(:address, :latitude, :longitude)
+    end
 end
