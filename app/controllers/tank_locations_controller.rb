@@ -1,10 +1,11 @@
 class TankLocationsController < ApplicationController
   def new
-    @tank_location = TankLocation.new
+    @tank_location = current_user.tank_locations.build
+
   end
 
   def create
-    @tank_location = TankLocation.new(tank_location_params)
+    @tank_location = current_user.tank_locations.build(tank_location_params)
     if @tank_location.save
       redirect_to @tank_location
     else
