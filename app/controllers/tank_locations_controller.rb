@@ -23,11 +23,14 @@ class TankLocationsController < ApplicationController
     end
   end
 
+  def show
+    @tank_location = TankLocation.find(params[:id])
+  end
+
   def destroy
   end
 
-  def show
-  end
+
 
   def index
   end
