@@ -9,8 +9,17 @@
   </head>
 
   <body>
+    <h2>WaterTanks</h2>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <div style='width: 800px;'>
+     <%= content_tag("div", id: "map", data: { locations: @hash.to_json}) do %>
+        Loading Map...
+      <%end %>
+    </div>
     <%= yield %>
+
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyAdMxmqeoadgTqFE1WPpXcS98fRSSKGR9o" ></script>
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
   </body>
 </html>

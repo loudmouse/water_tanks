@@ -3,6 +3,10 @@ class TankLocationsController < ApplicationController
 
   def index
     @tank_locations = TankLocation.all
+    @hash = Gmaps4rails.build_markers(@tank_locations) do |tank_location, marker|
+      marker.lat tank_location.latitude
+      marker.lng tank_location.longitude
+    end
   end
 
   def new
@@ -35,6 +39,10 @@ class TankLocationsController < ApplicationController
 
   def show
     @tank_location = TankLocation.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@tank_location) do |tank_location, marker|
+      marker.lat tank_location.latitude
+      marker.lng tank_location.longitude
+    end
   end
 
   def destroy
