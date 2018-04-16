@@ -1,6 +1,19 @@
 <h1>TankLocations</h1>
 
-<% @tank_locations.each do |tl| %>
-  <li><%= tl.address %></li>
-<% end %>
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Lat</th>
+    <th>Long</th>
+  </tr>
+  <% @tank_locations.each do |tl| %>
+    <tr>
+      <td><%= tl.address %></td>
+      <td><%= tl.longitude %></td>
+      <td><%= tl.latitude %></td>
+    </tr>
+  <% end %>
+</table>
+
+
 
