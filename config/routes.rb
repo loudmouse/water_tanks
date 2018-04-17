@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   root to: 'users#show'
 
   resources :tank_locations
+  resources :photos
 end
