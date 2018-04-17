@@ -1,15 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/new'
-
-  get 'comments/create'
-
-  get 'comments/edit'
-
-  get 'comments/destroy'
-
-  get 'photos/create'
-
-  get 'photos/destroy'
 
   get 'users/new'
 
@@ -22,6 +11,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'tank_locations#index'
 
-  resources :tank_locations
-  resources :photos
+  resources :tank_locations do
+    resources :comments, module: :tank_locations
+  end
+
+  resources :photos do
+    resources :comments, module: :photos
+  end
 end

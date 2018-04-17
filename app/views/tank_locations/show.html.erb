@@ -6,3 +6,5 @@
 
 <%= link_to 'Edit', edit_tank_location_path(@tank_location) %> |
 <%= link_to 'Back', tank_locations_path %>
+
+<%= render partial: "comments/comments", locals: {commentable: @tank_location} %>
