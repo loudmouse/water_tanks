@@ -60,4 +60,4 @@ gem 'gmaps4rails'
 gem 'geocoder'
 
 # Paperclip
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'paperclip', '~> 5.2.0'
