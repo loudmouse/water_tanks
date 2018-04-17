@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'users/destroy'
 
   devise_for :users
-  root to: 'users#show'
+  root to: 'tank_locations#index'
 
   resources :tank_locations
   resources :photos
