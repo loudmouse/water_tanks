@@ -1,2 +1,5 @@
 <h1>Tank Photo</h1>
 <%= image_tag @photo.image.url(:medium) %>
+
+<%= render partial: "comments/comments", locals: {commentable: @photo} %>
+<%= render partial: "comments/form", locals: {commentable: @photo} %>
