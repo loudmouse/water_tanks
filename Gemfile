@@ -58,3 +58,6 @@ gem 'devise', '~> 4.2'
 # Google Maps
 gem 'gmaps4rails'
 gem 'geocoder'
+
+# Paperclip
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
