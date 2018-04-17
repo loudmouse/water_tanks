@@ -8,3 +8,4 @@
 <%= link_to 'Back', tank_locations_path %>
 
 <%= render partial: "comments/comments", locals: {commentable: @tank_location} %>
+<%= render partial: "comments/form", locals: {commentable: @tank_location} %>
