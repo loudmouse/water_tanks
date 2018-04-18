@@ -15,5 +15,6 @@
   <% end %>
 </table>
 
-
-
+<% if user_signed_in? %>
+  <%= link_to "Map a Water Tank", new_tank_location_path%>
+<% end %>
