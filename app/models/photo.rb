@@ -1,6 +1,6 @@
 class Photo < ApplicationRecord
   has_many :comments, as: :commentable
-  belongs_to :tank_location, optional: true
+  belongs_to :tank_location, optional: false
   belongs_to :user
 
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
