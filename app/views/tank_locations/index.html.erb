@@ -1,3 +1,13 @@
+<div class="mx-auto" style="width: 200px;">
+<% if user_signed_in? %>
+  <%= link_to "Map a Water Tank", new_tank_location_path, class: "btn btn-primary btn-lg"%>
+<% end %>
+
+<% if !user_signed_in? %>
+  <%= link_to "Sign Up to Map a Water Tank", new_user_registration_path, class: "btn btn-warning btn-lg"  %>
+<% end %>
+</div>
+
 <h1>TankLocations</h1>
 
 <table class="table">
@@ -25,7 +35,3 @@
     </tr>
   <% end %>
 </table>
-
-<% if user_signed_in? %>
-  <%= link_to "Map a Water Tank", new_tank_location_path, class: "btn"%>
-<% end %>
