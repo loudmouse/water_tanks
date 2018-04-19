@@ -1,20 +1,31 @@
 <h1>TankLocations</h1>
 
-<table>
-  <tr>
-    <th>Address</th>
-    <th>Lat</th>
-    <th>Long</th>
-  </tr>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Address</th>
+      <th scope="col">Lat</th>
+      <th scope="col">Long</th>
+      <th scope="col">Show</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
   <% @tank_locations.each do |tl| %>
     <tr>
       <td><%= tl.address %></td>
       <td><%= tl.longitude %></td>
       <td><%= tl.latitude %></td>
+      <% if user_signed_in? %>
+        <td><%= link_to "Show", tank_location_path(tl) %></td>
+        <td><%= link_to "edit", edit_tank_location_path(tl) %></td>
+      <% else %>
+        <td>Sign in to View Tank</td>
+        <td>Sign in to Edit Tank</td>
+      <% end %>
     </tr>
   <% end %>
 </table>
 
 <% if user_signed_in? %>
-  <%= link_to "Map a Water Tank", new_tank_location_path%>
+  <%= link_to "Map a Water Tank", new_tank_location_path, class: "btn"%>
 <% end %>

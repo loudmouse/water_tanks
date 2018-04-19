@@ -1,3 +1,4 @@
+
 <%= form_for(@tank_location, local: true) do |form| %>
  <% if tank_location.errors.any? %>
    <div id="error_explanation">
@@ -11,22 +12,22 @@
    </div>
  <% end %>
 
- <div class="field">
+ <div class="field form-group">
    <%= form.label :latitude %>
-   <%= form.text_field :latitude, id: :tank_location_latitude %>
+   <%= form.text_field :latitude, id: :tank_location_latitude, class: 'form-control' %>
  </div>
 
- <div class="field">
+ <div class="field form-group">
    <%= form.label :longitude %>
-   <%= form.text_field :longitude, id: :tank_location_longitude %>
+   <%= form.text_field :longitude, id: :tank_location_longitude, class: 'form-control' %>
  </div>
 
- <div class="field">
+ <div class="field form-group">
    <%= form.label :address %>
-   <%= form.text_field :address, id: :tank_location_address %>
+   <%= form.text_field :address, id: :tank_location_address, class: 'form-control' %>
  </div>
 
- <div class="actions">
+ <div class="actions form-group">
    <%= form.submit %>
  </div>
 <% end %>
