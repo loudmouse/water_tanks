@@ -12,5 +12,9 @@
  *
  */
 @import 'bootstrap';
-@import 'maps'
+@import 'maps';
 
+html {
+  margin-left: 5%;
+  margin-right: 5%;
+}
