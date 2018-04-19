@@ -30,6 +30,14 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <% if user_signed_in? %>
+      <%= link_to "Map a Water Tank", new_tank_location_path, class: "btn btn-primary btn-block"%>
+    <% end %>
+
+    <% if !user_signed_in? %>
+      <%= link_to "Sign Up to Map a Water Tank", new_user_registration_path, class: "btn btn-warning btn-block"  %>
+    <% end %>
+
      <%= content_tag("div", id: "map", class: "jumbotron", data: { locations: @hash.to_json}) do %>
         Loading Map...
       <%end %>
