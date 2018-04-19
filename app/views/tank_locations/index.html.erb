@@ -18,6 +18,9 @@
       <% if user_signed_in? %>
         <td><%= link_to "Show", tank_location_path(tl) %></td>
         <td><%= link_to "edit", edit_tank_location_path(tl) %></td>
+      <% else %>
+        <td>Sign in to View Tank</td>
+        <td>Sign in to Edit Tank</td>
       <% end %>
     </tr>
   <% end %>
