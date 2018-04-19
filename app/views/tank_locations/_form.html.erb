@@ -1,4 +1,4 @@
-<%= form_for(@tank_location, local: true) do |form| %>
+<%= form_for(@tank_location, local: true, html: {class: ".form-control-lg"} ) do |form| %>
  <% if tank_location.errors.any? %>
    <div id="error_explanation">
      <h2><%= pluralize(tank_location.errors.count, "error") %> prohibited this tank_location from being saved:</h2>
@@ -11,22 +11,22 @@
    </div>
  <% end %>
 
- <div class="field">
+ <div class="field form-group">
    <%= form.label :latitude %>
    <%= form.text_field :latitude, id: :tank_location_latitude %>
  </div>
 
- <div class="field">
+ <div class="field form-group">
    <%= form.label :longitude %>
    <%= form.text_field :longitude, id: :tank_location_longitude %>
  </div>
 
- <div class="field">
+ <div class="field form-group">
    <%= form.label :address %>
    <%= form.text_field :address, id: :tank_location_address %>
  </div>
 
- <div class="actions">
+ <div class="actions form-group">
    <%= form.submit %>
  </div>
 <% end %>

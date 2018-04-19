@@ -61,3 +61,8 @@ gem 'geocoder'
 
 # Paperclip
 gem 'paperclip', '~> 5.2.0'
+
+# bootstrap 4 styles
+gem 'bootstrap', '~> 4.1.0'
+
+# jquery for some bootstrap functionality
