@@ -11,6 +11,10 @@
       <td><%= tl.address %></td>
       <td><%= tl.longitude %></td>
       <td><%= tl.latitude %></td>
+      <% if current_user %>
+        <td><%= link_to "Show", tank_location_path(tl) %></td>
+        <td><%= link_to "edit", edit_tank_location_path(tl) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
