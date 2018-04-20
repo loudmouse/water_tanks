@@ -14,7 +14,7 @@
           <% end %>
           <% if user_signed_in? %>
           <li class="list-inline-item">
-              <%= link_to "Map a Water Tank", new_tank_location_path, class: "btn btn-primary btn-block" %>
+              <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "btn btn-primary btn-block" %>
           </li>
           <% end %>
       </ul>

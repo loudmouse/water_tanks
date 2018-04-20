@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <% if user_signed_in? %>
-            <%= link_to "Add Water Tank", new_tank_location_path, class: "nav-item nav-link"  %>
+            <%= link_to "Add Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "nav-item nav-link"  %>
             <%= link_to "Sign Out", destroy_user_session_path, method: "delete", class: "nav-item nav-link"  %>
           <% else %>
             <%= link_to "Sign In", new_user_session_path, class: "nav-item nav-link"  %>
@@ -33,7 +33,7 @@
     <%= render "layouts/jumbotron" %>
 
     <% if user_signed_in? %>
-      <%= link_to "Map a Water Tank", new_tank_location_path, class: "btn btn-primary btn-block big-main-button"%>
+      <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "btn btn-primary btn-block big-main-button"%>
     <% end %>
 
     <% if !user_signed_in? %>
