@@ -11,7 +11,6 @@ class TankLocationsController < ApplicationController
 
   def new
     @tank_location = current_user.tank_locations.build
-
   end
 
   def create
