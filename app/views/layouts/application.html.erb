@@ -11,14 +11,14 @@
   </head>
   <body class="contianer-main">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <%= link_to "Home", root_path , class: "navbar-brand" %>
+      <%= link_to "Chicago Water Tanks", root_path , class: "navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <% if user_signed_in? %>
-            <%= link_to "Add Water Tank", new_tank_location_path, class: "nav-item nav-link"  %>
+            <%= link_to "Add Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "nav-item nav-link"  %>
             <%= link_to "Sign Out", destroy_user_session_path, method: "delete", class: "nav-item nav-link"  %>
           <% else %>
             <%= link_to "Sign In", new_user_session_path, class: "nav-item nav-link"  %>
@@ -30,6 +30,16 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <%= render "layouts/jumbotron" %>
+
+    <% if user_signed_in? %>
+      <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "btn btn-primary btn-block big-main-button"%>
+    <% end %>
+
+    <% if !user_signed_in? %>
+      <%= link_to "Sign Up to Map a Water Tank", new_user_registration_path, class: "btn btn-warning btn-block big-main-button"  %>
+    <% end %>
+
      <%= content_tag("div", id: "map", class: "jumbotron", data: { locations: @hash.to_json}) do %>
         Loading Map...
       <%end %>
@@ -38,5 +48,7 @@
 
 
   </body>
-</html>
 
+   <%= render "layouts/footer" %>
+
+</html>

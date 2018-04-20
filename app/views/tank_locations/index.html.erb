@@ -1,3 +1,5 @@
+<div class="mx-auto" style="width: 100%;">
+  
 <h1>TankLocations</h1>
 
 <table class="table">
@@ -25,7 +27,3 @@
     </tr>
   <% end %>
 </table>
-
-<% if user_signed_in? %>
-  <%= link_to "Map a Water Tank", new_tank_location_path, class: "btn"%>
-<% end %>

@@ -1,33 +1,34 @@
+<div id="map-a-tank"
+  <%= form_for(@tank_location, local: true) do |form| %>
+   <% if tank_location.errors.any? %>
+     <div id="error_explanation">
+       <h2><%= pluralize(tank_location.errors.count, "error") %> prohibited this tank_location from being saved:</h2>
 
-<%= form_for(@tank_location, local: true) do |form| %>
- <% if tank_location.errors.any? %>
-   <div id="error_explanation">
-     <h2><%= pluralize(tank_location.errors.count, "error") %> prohibited this tank_location from being saved:</h2>
+       <ul>
+       <% tank_location.errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+       <% end %>
+       </ul>
+     </div>
+   <% end %>
 
-     <ul>
-     <% tank_location.errors.full_messages.each do |message| %>
-       <li><%= message %></li>
-     <% end %>
-     </ul>
+   <div class="field form-group">
+     <%= form.label :latitude %>
+     <%= form.text_field :latitude, id: :tank_location_latitude, class: 'form-control' %>
    </div>
- <% end %>
 
- <div class="field form-group">
-   <%= form.label :latitude %>
-   <%= form.text_field :latitude, id: :tank_location_latitude, class: 'form-control' %>
- </div>
+   <div class="field form-group">
+     <%= form.label :longitude %>
+     <%= form.text_field :longitude, id: :tank_location_longitude, class: 'form-control' %>
+   </div>
 
- <div class="field form-group">
-   <%= form.label :longitude %>
-   <%= form.text_field :longitude, id: :tank_location_longitude, class: 'form-control' %>
- </div>
+   <div class="field form-group">
+     <%= form.label :address %>
+     <%= form.text_field :address, id: :tank_location_address, class: 'form-control' %>
+   </div>
 
- <div class="field form-group">
-   <%= form.label :address %>
-   <%= form.text_field :address, id: :tank_location_address, class: 'form-control' %>
- </div>
-
- <div class="actions form-group">
-   <%= form.submit %>
- </div>
-<% end %>
+   <div class="actions form-group">
+     <%= form.submit %>
+   </div>
+  <% end %>
+</div>
