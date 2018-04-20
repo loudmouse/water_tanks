@@ -30,6 +30,8 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <%= render "layouts/jumbotron" %>
+
     <% if user_signed_in? %>
       <%= link_to "Map a Water Tank", new_tank_location_path, class: "btn btn-primary btn-block big-main-button"%>
     <% end %>
