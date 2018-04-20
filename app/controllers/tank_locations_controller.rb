@@ -2,15 +2,12 @@ class TankLocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tank_locations = TankLocation.all
-    @hash = Gmaps4rails.build_markers(@tank_locations) do |tank_location, marker|
-      marker.lat tank_location.latitude
-      marker.lng tank_location.longitude
-    end
+    get_all_tank_markers
   end
 
   def new
     @tank_location = current_user.tank_locations.build
+    get_all_tank_markers
   end
 
   def create
@@ -49,6 +46,14 @@ class TankLocationsController < ApplicationController
 
 
   private
+
+    def get_all_tank_markers
+      @tank_locations = TankLocation.all
+      @hash = Gmaps4rails.build_markers(@tank_locations) do |tank_location, marker|
+        marker.lat tank_location.latitude
+        marker.lng tank_location.longitude
+      end
+    end
 
     def set_location
       @tank_location = TankLocation.find(params[:id])
