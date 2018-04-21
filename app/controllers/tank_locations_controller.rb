@@ -16,7 +16,16 @@ class TankLocationsController < ApplicationController
 
   def new
     @tank_location = current_user.tank_locations.build
-
+    @tank_locations = TankLocation.all
+      @hash = Gmaps4rails.build_markers(@tank_locations) do |tank_location, marker|
+        marker.lat tank_location.latitude
+        marker.lng tank_location.longitude
+        marker.picture({
+                  :url    => "https://image.ibb.co/iQugxS/water_tank_icon.png",
+                  :width  => "32",
+                  :height => "32"
+                 })
+    end
   end
 
   def create
