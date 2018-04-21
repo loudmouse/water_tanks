@@ -2,11 +2,16 @@ class TankLocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
-   @tank_locations = TankLocation.all
-      @hash = Gmaps4rails.build_markers(@tank_locations) do |tank_location, marker|
-        marker.lat tank_location.latitude
-        marker.lng tank_location.longitude
-      end
+    @tank_locations = TankLocation.all
+    @hash = Gmaps4rails.build_markers(@tank_locations) do |tank_location, marker|
+      marker.lat tank_location.latitude
+      marker.lng tank_location.longitude
+      marker.picture({
+                  :url    => "https://image.ibb.co/iQugxS/water_tank_icon.png",
+                  :width  => "32",
+                  :height => "32"
+                 })
+    end
   end
 
   def new
