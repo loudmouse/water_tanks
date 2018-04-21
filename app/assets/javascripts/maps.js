@@ -20,6 +20,11 @@ function allowMarkerDrop(){
   google.maps.event.addListener(handler.getMap(), 'click', function(event) {
     const lat = event.latLng.lat()
     const lng = event.latLng.lng()
+    const formLat = document.querySelector("#tank_location_latitude")
+    const formLng = document.querySelector("#tank_location_longitude")
     handler.addMarker({"lat": lat, "lng": lng})
+    console.log(formLat)
+    formLat.value = lat
+    formLng.value = lng
   });
 }
