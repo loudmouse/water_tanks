@@ -13,6 +13,7 @@ document.addEventListener('turbolinks:load', function(){
   google.maps.event.addListener(handler.getMap(), 'click', function(event) {
     if(lastMarker){
       lastMarker.setMap(null)
+      handler.removeMarker(lastMarker)
     }
     let lat = event.latLng.lat()
     let lng = event.latLng.lng()
