@@ -1,4 +1,5 @@
 document.addEventListener('turbolinks:load', function(){
+
   const locations = JSON.parse(document.querySelector("#map").dataset.locations)
   let lastMarker
 
@@ -15,16 +16,20 @@ document.addEventListener('turbolinks:load', function(){
       lastMarker.setMap(null)
       handler.removeMarker(lastMarker)
     }
-    let lat = event.latLng.lat()
-    let lng = event.latLng.lng()
 
-    lastMarker = handler.addMarker({"lat": lat, "lng": lng})
-    const formLat = document.querySelector("#tank_location_latitude")
-    const formLng = document.querySelector("#tank_location_longitude")
-    formLat.value = lat
-    formLng.value = lng
+    let location = {
+      "lat": event.latLng.lat(),
+      "lng": event.latLng.lng()
+    }
+
+    lastMarker = handler.addMarker(location)
+
+    document.querySelector("#tank_location_latitude").value  = location.lat
+    document.querySelector("#tank_location_longitude").value = location.lng
+
   });
 });
+
 
 
 
