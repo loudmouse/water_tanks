@@ -9,7 +9,7 @@ document.addEventListener('turbolinks:load', function(){
 function createMapWithMarkers(){
   const locations = JSON.parse(document.querySelector("#map").dataset.locations)
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  handler.buildMap({ provider: {maxZoom: 17}, internal: {id: 'map'}}, function(){
     markers = handler.addMarkers(locations);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
@@ -23,7 +23,6 @@ function allowMarkerDrop(){
     const formLat = document.querySelector("#tank_location_latitude")
     const formLng = document.querySelector("#tank_location_longitude")
     handler.addMarker({"lat": lat, "lng": lng})
-    console.log(formLat)
     formLat.value = lat
     formLng.value = lng
   });
