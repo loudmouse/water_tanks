@@ -2,6 +2,7 @@ document.addEventListener('turbolinks:load', function(){
 
   const locations = JSON.parse(document.querySelector("#map").dataset.locations)
   let lastMarker
+  const geocoder = new google.maps.Geocoder
 
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {maxZoom: 17}, internal: {id: 'map'}}, function(){
@@ -21,6 +22,9 @@ document.addEventListener('turbolinks:load', function(){
       "lat": event.latLng.lat(),
       "lng": event.latLng.lng()
     }
+    geocoder.geocode({location: location}, (results, status) => {
+      document.querySelector("#tank_location_address").value = results[0].formatted_address
+    })
 
     lastMarker = handler.addMarker(location)
 
