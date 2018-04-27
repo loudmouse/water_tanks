@@ -1,10 +1,22 @@
-<%= form_for [tank_location, Photo.new] do |form| %>
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image, id: :photo_image %>
-  </div>
+<%= form_for [tank_location, Photo.new],  local: true, html: { :multipart => true } do |form| %>
+ <% if @photos && @photo.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+     <ul>
+     <% @photo.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+ <div class="field">
+   <%= form.label :image %>
+   <%= form.file_field :image, id: :photo_image %>
+ </div>
+
+ <div class="actions">
+   <%= form.submit %>
+ </div>
 <% end %>
