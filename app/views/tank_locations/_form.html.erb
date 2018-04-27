@@ -27,6 +27,13 @@
      <%= form.text_field :address, id: :tank_location_address, class: 'form-control' %>
    </div>
 
+   <div class="field form-group">
+      <%= form.fields_for :photos do |photo_form| %>
+        <%= photo_form.label :image %>
+        <%= photo_form.file_field :image, id: :photo_image %>
+      <% end %>
+   </div>
+
    <div class="actions form-group">
      <%= form.submit %>
    </div>
