@@ -3,6 +3,8 @@ class TankLocation < ApplicationRecord
   has_many :photos
   belongs_to :user
 
+  accepts_nested_attributes_for :photos
+# reject_if: proc { |attributes| attributes['title'].blank? }
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 end
