@@ -3,29 +3,13 @@ class TankLocationsController < ApplicationController
 
   def index
     @tank_locations = TankLocation.all
-    @hash = Gmaps4rails.build_markers(@tank_locations) do |tank_location, marker|
-      marker.lat tank_location.latitude
-      marker.lng tank_location.longitude
-      marker.picture({
-                  :url    => "https://image.ibb.co/iQugxS/water_tank_icon.png",
-                  :width  => "32",
-                  :height => "32"
-                 })
-    end
+    make_markers(@tank_locations)
   end
 
   def new
     @tank_location = current_user.tank_locations.build
     @tank_locations = TankLocation.all
-      @hash = Gmaps4rails.build_markers(@tank_locations) do |tank_location, marker|
-        marker.lat tank_location.latitude
-        marker.lng tank_location.longitude
-        marker.picture({
-                  :url    => "https://image.ibb.co/iQugxS/water_tank_icon.png",
-                  :width  => "32",
-                  :height => "32"
-                 })
-    end
+    make_markers(@tank_locations)
   end
 
   def create
@@ -53,10 +37,7 @@ class TankLocationsController < ApplicationController
 
   def show
     @tank_location = TankLocation.find(params[:id])
-    @hash = Gmaps4rails.build_markers(@tank_location) do |tank_location, marker|
-      marker.lat tank_location.latitude
-      marker.lng tank_location.longitude
-    end
+    make_markers(@tank_location)
   end
 
   def destroy
@@ -64,6 +45,18 @@ class TankLocationsController < ApplicationController
 
 
   private
+
+    def make_markers(locations)
+        @hash = Gmaps4rails.build_markers(locations) do |tank_location, marker|
+          marker.lat tank_location.latitude
+          marker.lng tank_location.longitude
+          marker.picture({
+                    :url    => "https://image.ibb.co/iQugxS/water_tank_icon.png",
+                    :width  => "32",
+                    :height => "32"
+                   })
+        end
+    end
 
     def set_location
       @tank_location = TankLocation.find(params[:id])
