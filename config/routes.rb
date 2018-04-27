@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   root to: 'tank_locations#index'
 
   resources :tank_locations do
+    resources :photos do
+      resources :comments, module: :photos
+    end
     resources :comments, module: :tank_locations
   end
 
-  resources :photos do
-    resources :comments, module: :photos
-  end
+
 end
