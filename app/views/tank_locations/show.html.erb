@@ -7,18 +7,8 @@
   <%= image_tag photo.image.url(:medium) %>
 <% end %>
 
-<%= form_for [@tank_location, Photo.new] do |form| %>
-  <div class="field">
-   <%= form.label :image %>
-   <%= form.file_field :image, id: :photo_image %>
- </div>
 
- <div class="actions">
-   <%= form.submit %>
-</div>
-
-<% end %>
-
+<%= render partial: "photos/form", locals: {tank_location: @tank_location} %>
 
 <%= link_to 'Edit', edit_tank_location_path(@tank_location) %> |
 <%= link_to 'Back', tank_locations_path %>
