@@ -7,13 +7,15 @@ class TankLocationsController < ApplicationController
   end
 
   def new
-    @tank_location = current_user.tank_locations.build
     @tank_locations = TankLocation.all
+    @tank_location = current_user.tank_locations.build
+    @tank_location.photos.new
     make_markers(@tank_locations)
   end
 
   def create
-    @tank_location = current_user.tank_locations.build(tank_location_params)
+    @tank_location = current_user.tank_locations.new(tank_location_params)
+    @tank_location.photos.first.user_id = current_user.id
     if @tank_location.save
       redirect_to @tank_location
     else
@@ -63,6 +65,6 @@ class TankLocationsController < ApplicationController
     end
 
     def tank_location_params
-      params.require(:tank_location).permit(:address, :latitude, :longitude)
+      params.require(:tank_location).permit(:address, :latitude, :longitude, photos_attributes: [:image] )
     end
 end
