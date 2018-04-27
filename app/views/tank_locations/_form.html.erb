@@ -11,15 +11,13 @@
        </ul>
      </div>
    <% end %>
-
+    <h3>Enter the address for the tank or drop a pin on the map.</h3>
    <div class="field form-group">
-     <%= form.label :latitude %>
-     <%= form.text_field :latitude, id: :tank_location_latitude, class: 'form-control' %>
+     <%= form.text_field :latitude, id: :tank_location_latitude, class: 'form-control', type: 'hidden' %>
    </div>
 
    <div class="field form-group">
-     <%= form.label :longitude %>
-     <%= form.text_field :longitude, id: :tank_location_longitude, class: 'form-control' %>
+     <%= form.text_field :longitude, id: :tank_location_longitude, class: 'form-control', type: 'hidden' %>
    </div>
 
    <div class="field form-group">
