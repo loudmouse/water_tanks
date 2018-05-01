@@ -5,14 +5,14 @@ document.addEventListener('turbolinks:load', function(){
   const geocoder = new google.maps.Geocoder
 
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {maxZoom: 17}, internal: {id: 'map'}}, function(){
+  handler.buildMap({ provider: {maxZoom: 17}, internal: {id: 'map'}}, ()=>{
     markers = handler.addMarkers(locations);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
   });
 
 
-  google.maps.event.addListener(handler.getMap(), 'click', function(event) {
+  google.maps.event.addListener(handler.getMap(), 'click', (event)=> {
     if(lastMarker){
       lastMarker.setMap(null)
       handler.removeMarker(lastMarker)
