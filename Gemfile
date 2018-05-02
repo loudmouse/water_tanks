@@ -59,8 +59,8 @@ gem 'devise', '~> 4.2'
 gem 'gmaps4rails'
 gem 'geocoder'
 
-# Paperclip
-gem 'paperclip', '~> 5.2.0'
+gem 'paperclip', '~> 4.2.1'
+gem 'aws-sdk', '< 2.0'
 
 # bootstrap 4 styles
 gem 'bootstrap', '~> 4.1.0'
