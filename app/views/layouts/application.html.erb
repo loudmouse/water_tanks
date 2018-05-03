@@ -30,19 +30,10 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render "layouts/jumbotron" %>
-
-    <% if user_signed_in? %>
-      <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "btn btn-primary btn-block big-main-button"%>
+    
+    <% unless current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
+      <%= render "layouts/header" %>
     <% end %>
-
-    <% if !user_signed_in? %>
-      <%= link_to "Sign Up to Map a Water Tank", new_user_registration_path, class: "btn btn-warning btn-block big-main-button"  %>
-    <% end %>
-
-     <%= content_tag("div", id: "map", class: "jumbotron", data: { locations: @hash.to_json}) do %>
-        Loading Map...
-      <%end %>
 
     <%= yield %>
 
