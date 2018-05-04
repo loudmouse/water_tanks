@@ -1,0 +1,21 @@
+
+  <div class="jumbotron hero-image">
+  <h1 class="display-4">Welcome!</h1>
+  <p class="lead">Help us map Chicago's historic water tanks.</p>
+  <p class="lead">
+    <!-- We can eventually link to an about page here.-->
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+
+<% if user_signed_in? %>
+  <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "btn btn-primary btn-block big-main-button"%>
+<% end %>
+
+<% if !user_signed_in? %>
+  <%= link_to "Sign Up to Map a Water Tank", new_user_registration_path, class: "btn btn-warning btn-block big-main-button"  %>
+<% end %>
+
+ <%= content_tag("div", id: "map", class: "jumbotron", data: { locations: @hash.to_json}) do %>
+    Loading Map...
+  <%end %>
