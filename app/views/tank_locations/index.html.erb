@@ -12,7 +12,9 @@
     -->
       <th scope="col">Photo</th>
       <th scope="col">Show</th>
+      <% if user_signed_in? %>
       <th scope="col">Edit</th>
+      <% end %>
     </tr>
   </thead>
   <% @tank_locations.each do |tl| %>
@@ -30,8 +32,7 @@
         <td><%= link_to "Show", tank_location_path(tl) %></td>
         <td><%= link_to "edit", edit_tank_location_path(tl) %></td>
       <% else %>
-        <td>Sign in to View Tank</td>
-        <td>Sign in to Edit Tank</td>
+        <td><%= link_to "Show", tank_location_path(tl) %></td>
       <% end %>
     </tr>
   <% end %>
