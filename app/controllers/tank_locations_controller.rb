@@ -15,7 +15,7 @@ class TankLocationsController < ApplicationController
 
   def create
     @tank_location = current_user.tank_locations.new(tank_location_params)
-    @tank_location.photos.first.user_id = current_user.id
+    @tank_location.photos.first.user_id = current_user.id if @tank_location.photos.first
     if @tank_location.save
       redirect_to @tank_location
     else
