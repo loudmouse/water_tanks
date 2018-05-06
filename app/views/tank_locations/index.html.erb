@@ -1,5 +1,5 @@
 <div class="mx-auto" style="width: 100%;">
-  
+
 <h1>TankLocations</h1>
 
 <table class="table">
@@ -17,6 +17,9 @@
       <td><%= tl.address %></td>
       <td><%= tl.longitude %></td>
       <td><%= tl.latitude %></td>
+      <% if tl.photos.first %>
+        <td><%= image_tag tl.photos.first.image.url(:medium) %></td>
+      <% end %>
       <% if user_signed_in? %>
         <td><%= link_to "Show", tank_location_path(tl) %></td>
         <td><%= link_to "edit", edit_tank_location_path(tl) %></td>
