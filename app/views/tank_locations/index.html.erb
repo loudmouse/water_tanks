@@ -6,10 +6,6 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Address</th>
-    <!--
-      <th scope="col">Lat</th>
-      <th scope="col">Long</th>
-    -->
       <th scope="col">Photo</th>
       <th scope="col">Show</th>
       <% if user_signed_in? %>
@@ -21,10 +17,6 @@
     <tr>
 
       <td><%= tl.address %></td>
-    <!--
-      <td><%= tl.longitude %></td>
-      <td><%= tl.latitude %></td>
-    -->
       <% if tl.photos.first %>
         <td><%= image_tag tl.photos.first.image.url(:medium) %></td>
       <% end %>
