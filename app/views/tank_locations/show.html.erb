@@ -3,9 +3,13 @@
 <h3>Long: <%= @tank_location.longitude %></h3>
 <h3><%= @tank_location.address %></h3>
 
-<% @tank_location.photos.each do |photo| %>
-  <%= image_tag photo.image.url(:medium) %>
-<% end %>
+<div class="tank-location-photos-container">
+	<% @tank_location.photos.each do |photo| %>
+	  <%= image_tag photo.image.url(:medium) %>
+	  <%= link_to 'Up Vote', like_tank_location_photo(photo) %> 
+	  <%= link_to 'Down Vote', dislike_tank_location_photo(photo) %> 
+	<% end %>
+</div>
 
 
 <%= render partial: "photos/form", locals: {tank_location: @tank_location} %>

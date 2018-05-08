@@ -13,8 +13,16 @@ Rails.application.routes.draw do
 
   resources :tank_locations do
     resources :photos do
+
+      member do
+        put "like", to: "photos#upvote"
+        put "dislike", to: "photos#downvote"
+      end
+
       resources :comments, module: :photos
     end
+
+    
     resources :comments, module: :tank_locations
   end
 
