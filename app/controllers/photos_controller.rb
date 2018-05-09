@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :set_tank_location
+  before_action :set_tank_location, :only => [ :create ]
 
   def new
     @photo = current_user.photos.build
@@ -21,6 +21,18 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+  end
+
+  def upvote 
+    @photo = Photo.find(params[:id])
+    @photo.upvote_by current_user
+    redirect_to @photo.tank_location
+  end  
+
+  def downvote
+    @photo = Photo.find(params[:id])
+    @photo.downvote_by current_user
+    redirect_to @photo.tank_location
   end
 
   private

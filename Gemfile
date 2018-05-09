@@ -65,4 +65,5 @@ gem 'aws-sdk', '< 2.0'
 # bootstrap 4 styles
 gem 'bootstrap', '~> 4.1.0'
 
-# jquery for some bootstrap functionality
+gem 'acts_as_votable', '~> 0.11.1'
+
