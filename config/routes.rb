@@ -11,11 +11,6 @@ Rails.application.routes.draw do
     resources :comments, only: [ :create, :destroy ], module: :tank_locations
   end
 
-  resources :photos, only: [] do 
-     member do
-       put "like", to: "photos#upvote"
-       put "dislike", to: "photos#downvote"
-     end
-  end 
-
+  put 'photos/:id/like', to: "photos#upvote", as: 'like_photo'
+  put 'photos/:id/dislike', to: "photos#downvote", as: 'dislike_photo'
 end
