@@ -6,8 +6,7 @@
 <div class="tank-location-photos-container">
 	<% @tank_location.photos.each do |photo| %>
 	  <%= image_tag photo.image.url(:medium) %>
-	  <%= link_to 'Up Vote', like_tank_location_photo_path(photo) %> 
-	  <%= link_to 'Down Vote', dislike_tank_location_photo_path(photo) %> 
+	 
 	<% end %>
 </div>
 

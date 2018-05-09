@@ -7,9 +7,5 @@ class Photo < ApplicationRecord
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   
   acts_as_votable
-
-  def say 
-  	'hello'
-  end 
 end
 
