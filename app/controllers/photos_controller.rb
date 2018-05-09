@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :set_tank_location
+  before_action :set_tank_location, :only => [ :create ]
 
   def new
     @photo = current_user.photos.build

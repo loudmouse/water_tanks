@@ -12,14 +12,14 @@ Rails.application.routes.draw do
   root to: 'tank_locations#index'
 
   resources :tank_locations do
-    resources :photos only: [ :create, :destroy] do
-      resources :comments only: [ :create, :destroy ] , module: :photos
+    resources :photos, only: [ :create, :destroy] do
+      resources :comments, only: [ :create, :destroy ] , module: :photos
     end
 
-    resources :comments, module: :tank_locations
+    resources :comments, only: [ :create, :destroy ], module: :tank_locations
   end
 
-  resources :photos do 
+  resources :photos, only: [] do 
      member do
        put "like", to: "photos#upvote"
        put "dislike", to: "photos#downvote"

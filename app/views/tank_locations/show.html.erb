@@ -5,8 +5,15 @@
 
 <div class="tank-location-photos-container">
 	<% @tank_location.photos.each do |photo| %>
+	<div class="tank-image">
 	  <%= image_tag photo.image.url(:medium) %>
-	 
+	</div>
+	  <%= link_to 'Up Vote', like_photo_path(photo), method: 'PUT' %> 
+	  <%= link_to 'Down Vote', dislike_photo_path(photo), method: 'PUT' %> 
+	  <div class="votes">
+	  	<%= photo.get_upvotes.size %>
+	  	<%= photo.get_downvotes.size %>
+	  </div>
 	<% end %>
 </div>
 
