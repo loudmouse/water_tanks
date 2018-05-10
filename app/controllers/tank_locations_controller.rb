@@ -54,9 +54,9 @@ class TankLocationsController < ApplicationController
           marker.lng tank_location.longitude
           marker.infowindow ActionController::Base.helpers.image_tag tank_location.photos.first.image.url(:medium)
           marker.picture({
-                    :url => tank_location.photos.first.image.url(:thumb),
-                    :width  => "75",
-                    :height => "100"
+                    :url    => "https://image.ibb.co/iQugxS/water_tank_icon.png",
+                    :width  => "32",
+                    :height => "32"
                    })
         end
     end
