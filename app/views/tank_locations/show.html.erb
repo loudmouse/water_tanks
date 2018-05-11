@@ -4,13 +4,13 @@
 <h3><%= @tank_location.address %></h3>
 
 <div class="tank-location-photos-container">
-	<% @tank_location.photos.each do |photo| %>
+	<% @tank_location.photos.order(:cached_votes_up => :desc).each do |photo| %>
 	<div class="tank-image">
 		<%= image_tag photo.image.url(:medium) %>
 	</div>
 	<% if current_user %>
-		<%= link_to 'Up Vote', like_photo_path(photo), method: 'PUT' %> 
-		<%= link_to 'Down Vote', dislike_photo_path(photo), method: 'PUT' %> 
+		<%= link_to 'Up Vote', like_photo_path(photo), method: 'PUT' %>
+		<%= link_to 'Down Vote', dislike_photo_path(photo), method: 'PUT' %>
 	<% end  %>
 	<div class="votes">
 		<%= photo.get_upvotes.size %>
