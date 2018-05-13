@@ -7,6 +7,9 @@ document.addEventListener('turbolinks:load', function(){
     markers = handler.addMarkers(locations);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
+    var kmls = handler.addKml(
+    { url: "https://data.cityofchicago.org/api/geospatial/bbvz-uum9?method=export&format=KML" }
+  );
   });
 
   if(document.querySelector(".tank_locations_new")){
@@ -39,13 +42,3 @@ function allowDropPin() {
     document.querySelector("#tank_location_longitude").value = location.lng
   });
 }
-
-
-
-
-
-
-
-
-
-
