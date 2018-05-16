@@ -8,14 +8,6 @@
   </p>
 </div>
 
-<% if user_signed_in? %>
-  <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "btn btn-primary btn-block big-main-button"%>
-<% end %>
-
-<% if !user_signed_in? %>
-  <%= link_to "Sign Up to Map a Water Tank", new_user_registration_path, class: "btn btn-warning btn-block big-main-button"  %>
-<% end %>
-
 
 
   <section id="map_section" class="clearfix">
@@ -24,11 +16,11 @@
           <h2>Map of Water Tanks</h2>
           <p class="add_a_tank">
             <% if user_signed_in? %>
-              <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank')%>
+              <%= link_to "Add a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "button" %>
+              <!-- <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank')%> -->
             <% end %>
-
             <% if !user_signed_in? %>
-              <%= link_to "Sign Up to Map a Water Tank", new_user_registration_path %>
+              <%= link_to "Sign Up", new_user_registration_path, class: "button-non-user" %>
             <% end %>
           </p>
         </header>

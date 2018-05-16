@@ -1,8 +1,12 @@
 $main: #353535;
 $secondary: #595959;
 $highlight: #439ecc;
+$dark_highlight: #3884aa;
 $white: #ffffff;
+$off_white: #ececec;
 $red: #f85151;
+$gold: #fbc500;
+$dark_gold: #deae00;
 
 * {
   box-sizing: border-box;
@@ -43,6 +47,7 @@ h1, h2, h3, h4, h5, h6 {
     float: right;
     font-size: .9em;
     padding-top: 1em;
+    font-weight: 700;
     a {
       color: $secondary;
       text-decoration: none;
@@ -119,6 +124,37 @@ h1, h2, h3, h4, h5, h6 {
       float: right;
       font-size: .8em;
       margin: .75em 3.5% 0;
+      .button {
+        border: none;
+        outline: none;
+        padding: 1em 2em;
+        border-radius: 2em;
+        background: $highlight;
+        color: $white;
+        font-weight: 700;
+        font-size: 1em;
+        margin-top: 3em;
+        &:hover {
+          background: $dark_highlight;
+          text-decoration: none;
+          color: $off_white;
+        }
+      }
+      .button-non-user {
+        border: none;
+        outline: none;
+        padding: 1em 2em;
+        border-radius: 2em;
+        background: $gold;
+        color: $secondary;
+        font-weight: 700;
+        font-size: 1em;
+        margin-top: 3em;
+        &:hover {
+          background: $dark_gold;
+          text-decoration: none;
+        }
+      }
     }
   }
 }
