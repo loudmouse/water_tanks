@@ -2,6 +2,10 @@
   height: 30em;
 }
 
+#map img[src*='kml'] {
+    opacity: 0;
+}
+
 th, td {
     padding: 15px;
 }

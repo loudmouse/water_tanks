@@ -10,11 +10,11 @@ document.addEventListener('turbolinks:load', function(){
   })
  
   if(document.querySelector(".tank_locations_new")){
-    allowDropPin(handler)
+    allowPinDropToSetLocation(handler)
   }
 })
 
-function allowDropPin(map) {
+function allowPinDropToSetLocation(map) {
   let lastMarker
   const geocoder = new google.maps.Geocoder
   const neighborhoodOverlay = "https://data.cityofchicago.org/api/geospatial/bbvz-uum9?method=export&format=KML" 
@@ -23,7 +23,7 @@ function allowDropPin(map) {
           suppressInfoWindows: true,
           map: map.getMap()
         })
-
+console.log(neighborhoodOverlayLayer)
   neighborhoodOverlayLayer.addListener('click', (kmlEvent) => {
     
     if(lastMarker){
