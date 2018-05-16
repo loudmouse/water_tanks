@@ -66,6 +66,6 @@ class TankLocationsController < ApplicationController
     end
 
     def tank_location_params
-      params.require(:tank_location).permit(:address, :latitude, :longitude, photos_attributes: [:image] )
+      params.require(:tank_location).permit(:address, :latitude, :longitude, :neighborhood, photos_attributes: [:image] )
     end
 end
