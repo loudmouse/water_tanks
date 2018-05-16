@@ -1,0 +1,26 @@
+<section id="top_tanks" class="clearfix">
+    <div class="wrapper">
+      <header class="clearfix">
+        <h2>Popular Water Tanks</h2>
+        <p class="view_more">View More</p>
+      </header>
+
+      <div class="row">
+        <% @tank_locations.each do |tl| %>
+          <div class="tank_location">
+            <% if tl.photos.first %>
+              <%= image_tag tl.photos.first.image.url(:medium) %>
+            <% end %>
+            <h3 class="address"><%= tl.address %></h3>
+            <p class="tank_info">Mapped by: <%= tl.user.email %></p>
+            <% if user_signed_in? %>
+              <p><%= link_to "Show", tank_location_path(tl) %></p>
+              <p><%= link_to "edit", edit_tank_location_path(tl) %></p>
+            <% else %>
+              <p><%= link_to "Show", tank_location_path(tl) %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
