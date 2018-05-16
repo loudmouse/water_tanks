@@ -13,7 +13,7 @@
   <section id="map_section" class="clearfix">
       <div class="wrapper">
         <header class="clearfix">
-          <h2>Map of Water Tanks</h2>
+          <h2>We've mapped <%= @tank_locations.count %> water tanks. Help us map the rest.</h2>
           <p class="add_a_tank">
             <% if user_signed_in? %>
               <%= link_to "Add a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "button" %>
