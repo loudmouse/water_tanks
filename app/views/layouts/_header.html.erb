@@ -8,13 +8,7 @@
   </p>
 </div>
 
-<% if user_signed_in? %>
-  <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "btn btn-primary btn-block big-main-button"%>
-<% end %>
 
-<% if !user_signed_in? %>
-  <%= link_to "Sign Up to Map a Water Tank", new_user_registration_path, class: "btn btn-warning btn-block big-main-button"  %>
-<% end %>
 
  <!-- <%= content_tag("div", id: "map", class: "jumbotron", data: { locations: @hash.to_json}) do %>
     Loading Map...
@@ -25,7 +19,15 @@
       <div class="wrapper">
         <header class="clearfix">
           <h2>Map of Water Tanks</h2>
-          <p class="add_a_tank">Add a Tank</p>
+          <p class="add_a_tank">
+            <% if user_signed_in? %>
+              <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank')%>
+            <% end %>
+
+            <% if !user_signed_in? %>
+              <%= link_to "Sign Up to Map a Water Tank", new_user_registration_path %>
+            <% end %>
+          </p>
         </header>
 
         <div class="row">
