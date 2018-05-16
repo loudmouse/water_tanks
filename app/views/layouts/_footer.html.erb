@@ -1,41 +1,8 @@
-<div class="page-footer font-small stylish-color-dark pt-4 mt-4">
-
-  <hr>
-
-  <div class="text-center py-3">
-      <ul class="list-unstyled list-inline mb-0">
-          <li class="list-inline-item">
-              <h5 class="mb-1">Help us map Chicago's historic water tanks</h5>
-          </li>
-          <% if !user_signed_in? %>
-          <li class="list-inline-item">
-              <%= link_to "Sign Up!", new_user_registration_path, class: "btn btn-primary btn-warning"  %>
-          </li>
-          <% end %>
-          <% if user_signed_in? %>
-          <li class="list-inline-item">
-              <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "btn btn-primary btn-block" %>
-          </li>
-          <% end %>
-      </ul>
+<footer id="main_footer">
+  <p class="logo">Chicago Water Tanks</p>
+  <p class="open_source">Do you code? <span><a href="https://github.com/loudmouse/water_tanks">Contribute</a></span> to this open source project.</p>
+  <div class="links">
+    <a href="#">About</a>
+    <a href="#">Contact</a>
   </div>
-
-  <hr>
-
-  <div class="footer-copyright py-3 text-center">
-      <p> Do you code?<br> <%= link_to "Contribute", "https://github.com/loudmouse/water_tanks" %> to this open source project. </p>
-  </div>
-</div>
-
-<footer class="footer">
-  <small>
-    Brought to you by <%= link_to "Josh", "https://www.linkedin.com/in/josh-alletto-832a1810/" %> and <%= link_to "Nolan", "https://www.linkedin.com/in/nolanneeley/" %>.
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About",   "#" %></li>
-      <li><%= link_to "News", "#" %></li>
-      <li><%= link_to "Contact", "#" %></li>
-    </ul>
-  </nav>
 </footer>
