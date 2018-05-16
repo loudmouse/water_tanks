@@ -23,7 +23,7 @@ function allowPinDropToSetLocation(map) {
           suppressInfoWindows: true,
           map: map.getMap()
         })
-console.log(neighborhoodOverlayLayer)
+
   neighborhoodOverlayLayer.addListener('click', (kmlEvent) => {
     
     if(lastMarker){
