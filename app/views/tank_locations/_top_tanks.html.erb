@@ -12,7 +12,13 @@
             <%= image_tag tl.photos.first.image.url(:medium) %>
           <% end %>
           <h3 class="address"><%= tl.address %></h3>
-          <p class="tank_info">Mapped by: <%= tl.user.email %></p>
+          <p class="tank_info">
+            Mapped by: <%= tl.user.email %>
+            <% if tl.neighborhood %>
+              in <%= tl.neighborhood %>
+            <% end %>
+          </p>
+
           <% if user_signed_in? %>
             <p><%= link_to "Show", tank_location_path(tl) %></p>
             <p><%= link_to "edit", edit_tank_location_path(tl) %></p>

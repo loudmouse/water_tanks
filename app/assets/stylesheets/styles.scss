@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 .row {
   width: 100%;
   .tank_location {
-     width: 14%;
+     width: 22%;
      float: left;
      margin-right: 2.5%;
      img {
@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
        border-radius: .5em;
      }
      .address {
-       font-size: 1.25em;
+       font-size: .80em;
        margin: 1em 0 0 0;
        color: $main;
      }
@@ -342,7 +342,7 @@ h1, h2, h3, h4, h5, h6 {
        width: 30.6%;
        margin: 0 1.25% 2em 1.25%;
        .address {
-         font-size: 1em;
+         font-size: .9em;
          margin: .5em 0 0 0;
        }
        .tank_info {
@@ -395,6 +395,9 @@ h1, h2, h3, h4, h5, h6 {
        width: 250px;
        margin: 0 auto 2em auto;
        float: none;
+       .address {
+         font-size: .8em;
+       }
     }
   }
 
