@@ -25,6 +25,12 @@
      <%= form.text_field :address, id: :tank_location_address, class: 'form-control' %>
    </div>
 
+    <div class="field form-group">
+     <%= form.label :neighborhood %>
+     <%= form.select :neighborhood, get_neighborhood_names, id: :tank_location_address, class: 'form-control' %>
+   </div>
+
+
    <div class="field form-group">
       <%= form.fields_for :photos do |photo_form| %>
         <%= photo_form.label :image %>
