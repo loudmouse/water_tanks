@@ -172,7 +172,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #top_tanks {
-  border-bottom: 1px solid #d4d4d4;
   padding: 5em 0;
   header {
     padding: 0 0 1.5em 0;
@@ -229,9 +228,9 @@ h1, h2, h3, h4, h5, h6 {
   }
   .sign_in_form {
     margin-top: 3em;
-    input[type="email"],input[type="text"] {
+    input[type="email"],input[type="password"] {
       width: 48%;
-      margin: 0 .5%;
+      margin: 1em .5%;
       height: 3.25em;
       border: none;
       outline: none;
@@ -251,12 +250,6 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: 700;
       font-size: .9em;
       margin-top: 3em;
-      i {
-        color: $white;
-        &:hover {
-          color: $red;
-        }
-      }
     }
   }
 }
@@ -443,7 +436,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     .sign_in_form {
       margin-top: 2em;
-      input[type="email"], input[type="text"] {
+      input[type="email"], input[type="password"] {
         width: 90%;
         margin:0 0 1em 0;
       }
