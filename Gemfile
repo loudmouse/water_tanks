@@ -68,3 +68,5 @@ gem 'bootstrap', '~> 4.1.0'
 gem 'acts_as_votable', '~> 0.11.1'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
