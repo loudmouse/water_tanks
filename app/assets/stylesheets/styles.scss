@@ -189,12 +189,54 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.pagination:after {
+  clear: both;
+}
+
+.pagination_wrapper {
+  width: 100%;
+  margin: 0 auto;
+  .pagination {
+    display: block;
+    text-align: center;
+    margin: 2rem 0;
+    a, .previous_page, .current, .next_page {
+      padding: 0.75rem 1rem;
+      margin: 0 .25rem;
+      border-radius: .15rem;
+      line-height: 20px;
+      text-decoration: none;
+      background-color: #e9e9e9;
+      font-weight: 700;
+      font-size: .7rem;
+      font-style: normal;
+      color: $dark;
+      &:hover {
+        background: $highlight;
+        color: $white;
+      }
+    }
+    .disabled {
+      color: #C0C0C0;
+      &:hover {
+        color: #C0C0C0;
+      }
+    }
+    .current {
+      background: $highlight;
+      color: $white;
+    }
+  }
+}
+
 .row {
   width: 100%;
+  margin: 0 auto;
   .tank_location {
      width: 22%;
      float: left;
      margin-right: 2.5%;
+     text-align: center;
      img {
        width:100%;
        max-width: 100%;

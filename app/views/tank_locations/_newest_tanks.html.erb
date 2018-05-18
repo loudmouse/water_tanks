@@ -29,5 +29,11 @@
       <% end %>
     </div>
   </div>
-  <%= will_paginate @tank_locations, previous_label: "Back", next_label: "Next" %>
+
+  <div class="pagination_wrapper">
+    <div class="pagination clearfix">
+      <%= will_paginate @tank_locations, previous_label: "Back", next_label: "More Tanks" %>
+    </div>
+  </div>
+
 </section>
