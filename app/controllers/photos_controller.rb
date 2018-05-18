@@ -17,6 +17,12 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    @tank_location = TankLocation.find(params[:id])
+    @photo = @tank_location.photos.first
+    @photo.destroy
+
+    flash[:notice] = "Photo has been removed."
+    redirect_to @tank_location 
   end
 
   def upvote
