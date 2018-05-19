@@ -16,22 +16,35 @@
 
 	<section id="single_tank_photos" >
 
-			<div class="tank-location-photos-container">
-				<% @tank_location.photos.order(:cached_votes_up => :desc).each do |photo| %>
-				<div class="tank-image">
-					<%= image_tag photo.image.url(:medium) %>
-				</div>
-				<% if current_user %>
-					<%= link_to 'Up Vote', like_photo_path(photo), method: 'PUT' %>
-					<%= link_to 'Down Vote', dislike_photo_path(photo), method: 'PUT' %>
-				<% end  %>
-				<div class="votes">
-					<%= photo.get_upvotes.size %>
-					<%= photo.get_downvotes.size %>
-				</div>
-				<% end %>
-			</div>
+			<div id="display-single-tank-photos">
 
+				<div class="row">
+
+					<% @tank_location.photos.order(:cached_votes_up => :desc).each do |photo| %>
+
+						<div class="tank_info_wrapper">
+							<div class="tank-image">
+								<%= image_tag photo.image.url(:medium) %>
+							</div>
+
+							<p class="tank_info">Photo By:<br> <%= photo.user.email  %> </p>
+
+							<% if current_user %>
+								<%= link_to 'Up Vote', like_photo_path(photo), method: 'PUT' %>
+								<%= link_to 'Down Vote', dislike_photo_path(photo), method: 'PUT' %>
+							<% end  %>
+
+							<div class="votes">
+								<%= photo.get_upvotes.size %>
+								<%= photo.get_downvotes.size %>
+							</div>
+						</div>
+
+					<% end %>
+
+				</div>
+
+			</div>
 
 			<%= render partial: "photos/form", locals: {tank_location: @tank_location} %>
 
