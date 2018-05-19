@@ -1,13 +1,17 @@
 <section id="show_wrapper" class="clearfix">
-	<section id="single_tank_map" >
+	<section id="single_tank_map">
+
+		<div class="single_tank_info">
+			<p>Address:<br><%= @tank_location.address %></p>
+			<p>Mapped By:<br><%= @tank_location.user.email %></p>
+			<p>Neighborhood:<br><%= @tank_location.neighborhood %></p>
+		</div>
+
 			<%= render "layouts/map" %>
+
 	</section>
 
-	<section id="single_tank_info" >
-			<h1>Tank Location</h1>
-			<h3>Lat: <%= @tank_location.latitude %></h3>
-			<h3>Long: <%= @tank_location.longitude %></h3>
-			<h3><%= @tank_location.address %></h3>
+	<section id="single_tank_photos" >
 
 			<div class="tank-location-photos-container">
 				<% @tank_location.photos.order(:cached_votes_up => :desc).each do |photo| %>
