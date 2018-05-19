@@ -1,49 +1,12 @@
-
-  <!-- <div class="jumbotron hero-image">
-    <h1 class="display-4">Welcome!</h1>
-    <p class="lead">Help us map Chicago's historic water tanks.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
-  </div> -->
-
-  <section id="banner" class="clearfix">
-    <div id="banner_content_wrapper">
-      <div id="featured_tank">
-        <%= image_tag "test_tank_photo.jpg", class: "featured_tank_image" %>
-      </div>
-      <div id="content">
-        <h2 class="title">200 N Green St.</h2>
-        <p class="description">6 Photos from 3 Users</p>
-        <p class="info">1st Mapped by Josh on 5/11/2018</p>
-      </div>
+<section id="banner" class="clearfix">
+  <div id="banner_content_wrapper">
+    <div id="featured_tank">
+      <%= image_tag "test_tank_photo.jpg", class: "featured_tank_image" %>
     </div>
-  </section>
-
-
-
-  <section id="map_section" class="clearfix">
-      <div class="wrapper">
-        <header class="clearfix">
-          <h2>Map of Water Tanks</h2>
-          <p class="add_a_tank">
-            <% if user_signed_in? %>
-              <%= link_to "Add a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "button" %>
-              <!-- <%= link_to "Map a Water Tank", new_tank_location_path(anchor: 'map-a-tank')%> -->
-            <% end %>
-            <% if !user_signed_in? %>
-              <%= link_to "Sign Up", new_user_registration_path, class: "button-non-user" %>
-            <% end %>
-          </p>
-        </header>
-
-        <div class="row">
-          <div class="the_map">
-            <%= content_tag("div", id: "map", class: "jumbotron", data: { locations: @hash.to_json}) do %>
-               Loading Map...
-             <%end %>
-          </div>
-        </div>
-
-      </div>
-    </section>
+    <div id="content">
+      <h2 class="title">200 N Green St.</h2>
+      <p class="description">6 Photos from 3 Users</p>
+      <p class="info">1st Mapped by Josh on 5/11/2018</p>
+    </div>
+  </div>
+</section>
