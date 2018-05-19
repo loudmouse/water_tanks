@@ -1,31 +1,37 @@
-<%= render "layouts/map" %>
+<section id="show_wrapper" class="clearfix">
+	<section id="single_tank_map" >
+			<%= render "layouts/map" %>
+	</section>
 
-<h1>Tank Location</h1>
-<h3>Lat: <%= @tank_location.latitude %></h3>
-<h3>Long: <%= @tank_location.longitude %></h3>
-<h3><%= @tank_location.address %></h3>
+	<section id="single_tank_info" >
+			<h1>Tank Location</h1>
+			<h3>Lat: <%= @tank_location.latitude %></h3>
+			<h3>Long: <%= @tank_location.longitude %></h3>
+			<h3><%= @tank_location.address %></h3>
 
-<div class="tank-location-photos-container">
-	<% @tank_location.photos.order(:cached_votes_up => :desc).each do |photo| %>
-	<div class="tank-image">
-		<%= image_tag photo.image.url(:medium) %>
-	</div>
-	<% if current_user %>
-		<%= link_to 'Up Vote', like_photo_path(photo), method: 'PUT' %>
-		<%= link_to 'Down Vote', dislike_photo_path(photo), method: 'PUT' %>
-	<% end  %>
-	<div class="votes">
-		<%= photo.get_upvotes.size %>
-		<%= photo.get_downvotes.size %>
-	</div>
-	<% end %>
-</div>
+			<div class="tank-location-photos-container">
+				<% @tank_location.photos.order(:cached_votes_up => :desc).each do |photo| %>
+				<div class="tank-image">
+					<%= image_tag photo.image.url(:medium) %>
+				</div>
+				<% if current_user %>
+					<%= link_to 'Up Vote', like_photo_path(photo), method: 'PUT' %>
+					<%= link_to 'Down Vote', dislike_photo_path(photo), method: 'PUT' %>
+				<% end  %>
+				<div class="votes">
+					<%= photo.get_upvotes.size %>
+					<%= photo.get_downvotes.size %>
+				</div>
+				<% end %>
+			</div>
 
 
-<%= render partial: "photos/form", locals: {tank_location: @tank_location} %>
+			<%= render partial: "photos/form", locals: {tank_location: @tank_location} %>
 
-<%= link_to 'Edit', edit_tank_location_path(@tank_location) %> |
-<%= link_to 'Back', tank_locations_path %>
+			<%= link_to 'Edit', edit_tank_location_path(@tank_location) %> |
+			<%= link_to 'Back', tank_locations_path %>
 
-<%= render partial: "comments/comments", locals: {commentable: @tank_location} %>
-<%= render partial: "comments/form", locals: {commentable: @tank_location} %>
+			<%= render partial: "comments/comments", locals: {commentable: @tank_location} %>
+			<%= render partial: "comments/form", locals: {commentable: @tank_location} %>
+	</section>
+</section>
