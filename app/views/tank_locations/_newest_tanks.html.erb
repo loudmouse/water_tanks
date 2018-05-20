@@ -1,7 +1,7 @@
-<section id="top_tanks" class="clearfix">
+<section id="newest_tanks" class="clearfix">
   <div class="wrapper">
     <header class="clearfix">
-      <h2>Popular Water Tanks</h2>
+      <h2>Mapped Recently</h2>
       <!-- <p class="view_more">View More</p> -->
     </header>
 
@@ -29,4 +29,11 @@
       <% end %>
     </div>
   </div>
+
+  <div class="pagination_wrapper">
+    <div class="pagination clearfix">
+      <%= will_paginate @tank_locations, previous_label: "Back", next_label: "More Tanks" %>
+    </div>
+  </div>
+
 </section>
