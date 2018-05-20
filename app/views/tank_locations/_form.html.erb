@@ -1,45 +1,53 @@
-<div id="map-a-tank">
-  <%= form_for(@tank_location, local: true) do |form| %>
-   <% if tank_location.errors.any? %>
-     <div id="error_explanation">
-       <h2><%= pluralize(tank_location.errors.count, "error") %> prohibited this tank_location from being saved:</h2>
+<%= render "layouts/map" %>
 
-       <ul>
-       <% tank_location.errors.full_messages.each do |message| %>
-         <li><%= message %></li>
-       <% end %>
-       </ul>
-     </div>
-   <% end %>
-    <h3>Enter the address for the tank or drop a pin on the map.</h3>
-   <div class="field form-group">
-     <%= form.text_field :latitude, id: :tank_location_latitude, class: 'form-control', type: 'hidden' %>
-   </div>
+<section id="map_tank">
+  <div class="map_tank_inner">
+    <div id="map-a-tank">
+      <div class="map_tank_form">
+        <%= form_for(@tank_location, local: true) do |form| %>
+         <% if tank_location.errors.any? %>
+           <div id="error_explanation">
+             <h2><%= pluralize(tank_location.errors.count, "error") %> prohibited this tank_location from being saved:</h2>
 
-   <div class="field form-group">
-     <%= form.text_field :longitude, id: :tank_location_longitude, class: 'form-control', type: 'hidden' %>
-   </div>
+             <ul>
+             <% tank_location.errors.full_messages.each do |message| %>
+               <li><%= message %></li>
+             <% end %>
+             </ul>
+           </div>
+         <% end %>
 
-   <div class="field form-group">
-     <%= form.label :address %>
-     <%= form.text_field :address, id: :tank_location_address, class: 'form-control' %>
-   </div>
+            <h2>Click the map to add a water tank</h2>
+            <div>
+             <%= form.text_field :latitude, id: :tank_location_latitude, class: 'form-control', type: 'hidden' %>
+            </div>
 
-    <div class="field form-group">
-     <%= form.label :neighborhood %>
-     <%= form.select :neighborhood, get_neighborhood_names, id: :tank_location_address, class: 'form-control' %>
-   </div>
+            <div class="field form-group">
+             <%= form.text_field :longitude, id: :tank_location_longitude, class: 'form-control', type: 'hidden' %>
+            </div>
 
+            <div>
+             <%= form.text_field :address, placeholder: 'Address', id: :tank_location_address %>
+            </div>
 
-   <div class="field form-group">
-      <%= form.fields_for :photos do |photo_form| %>
-        <%= photo_form.label :image %>
-        <%= photo_form.file_field :image, id: :photo_image %>
-      <% end %>
-   </div>
+            <div>
+             <%= form.select :neighborhood, get_neighborhood_names, id: :tank_location_neighborhood %>
+            </div>
 
-   <div class="actions form-group">
-     <%= form.submit %>
-   </div>
-  <% end %>
-</div>
+               <div>
+                  <%= form.fields_for :photos do |photo_form| %>
+                    <label class="fileContainer">
+                      <%= photo_form.file_field :image, id: :photo_image %>
+                      <i class="fa fa-camera"></i><p>Upload a Photo</p>
+                    </label>
+                  <% end %>
+               </div>
+
+               <div>
+                 <%= form.submit "Submit", class: "button" %>
+               </div>
+          <% end %>
+    </div>
+    </div>
+  </div>
+</section>

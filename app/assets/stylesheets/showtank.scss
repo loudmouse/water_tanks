@@ -1,0 +1,41 @@
+#show_wrapper {
+  margin: 2em;
+  #single_tank_map {
+    max-width: 50%;
+    float: left;
+    .single_tank_info {
+      margin: 0 0 0 2em;
+    }
+    .map_title, .add_a_tank {
+      display: none;
+    }
+    #map_section {
+      padding: 0em 0;
+    }
+  }
+
+  #single_tank_photos {
+    max-width: 50%;
+    float: right;
+    #display-single-tank-photos {
+      .row {
+        width: 100%;
+        .tank_info_wrapper {
+           width: 30%;
+           float: left;
+           margin-right: 2.5%;
+           img {
+             width:100%;
+             max-width: 100%;
+             border-radius: .5em;
+           }
+           .tank_info {
+             font-size: .75em;
+             color: $secondary;
+             margin: 0.5em 0;
+           }
+        }
+      }
+    }
+  }
+}

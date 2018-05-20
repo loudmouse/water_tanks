@@ -14,6 +14,8 @@
 @import 'bootstrap';
 @import 'maps';
 @import 'styles';
+@import 'addtank';
+@import 'showtank';
 
 .big-main-button {
   margin-bottom: 1%;
@@ -25,32 +27,4 @@
   background-image: url("https://preview.ibb.co/dYbRWn/chicago_water_tanks.png");
   background-size: cover;
   color: #ffffff;
-}
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #000000;
-  color: #000000;
-}
-
-footer a {
-    color: #000;
-}
-
-footer ul {
-    float: right;
-    list-style: none;
-}
-
-footer ul  li {
-      float: left;
-      margin-left: 15px;
-}
-
-
-footer small {
-  float: left;
 }
