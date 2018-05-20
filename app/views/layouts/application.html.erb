@@ -17,7 +17,10 @@
 
     <header id="top_header" class="clearfix">
       <div class="wrapper">
-       <h1 class="logo">Chicago Water Tanks</h1>
+       <!-- <h1 class="logo">Chicago Water Tanks</h1> -->
+       <div>
+         <%= image_tag "chicago-water-tanks-text-logo-500x150.png", class: "the_logo" %>
+       </div>
          <a href="#" class="menu"><i class="fa fa-bars"></i></a>
            <nav id="main_nav">
               <% if user_signed_in? %>
