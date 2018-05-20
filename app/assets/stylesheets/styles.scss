@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size:1.15em;
     font-weight: 700;
   }
-  .logo {
+  .the_logo {
     width: 300px;
     float: left;
   }
@@ -310,6 +310,10 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     font-size:1.15em;
     font-weight: 700;
+  }
+  .footer_logo {
+    width: 350px;
+    margin: 0 auto;
   }
   .open_source {
     color: $secondary;
