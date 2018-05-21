@@ -14,18 +14,18 @@
     .map_tank_form {
       #tank_location_address, #tank_location_neighborhood {
         margin-top: 3em;
-
-          width: 50%;
-          margin: 1em .5%;
-          height: 3.25em;
-          border: none;
-          outline: none;
-          border-radius: .3em;
-          background: #404043;
-          padding: .5em 1.25em;
-          font-size: .8em;
-          color: $white;
-          }
+        width: 50%;
+        margin: 1em .5%;
+        height: 3.25em;
+        border: none;
+        outline: none;
+        border-radius: .3em;
+        background: #404043;
+        padding: .5em 1.25em;
+        font-size: .8em;
+        color: $white;
+        text-align: center;
+        }
 
           #tank_location_neighborhood {
             display: none;
