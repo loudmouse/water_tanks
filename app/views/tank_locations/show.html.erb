@@ -30,14 +30,18 @@
 							<p class="tank_info">Photo By:<br> <%= photo.user.email  %> </p>
 
 							<% if current_user %>
-								<%= link_to like_photo_path(photo), method: 'PUT' do %>
-									<i class="fa fa-arrow-up" aria-hidden="true"></i>
-								<% end %>
+								<div class="voting">
+									<div class="vote_counter">
+										<%= link_to like_photo_path(photo), method: 'PUT' do %>
+											<i class="fa fa-heart" aria-hidden="true"></i> <span class="vote_count"><%= photo.get_upvotes.size %> </span>
+										<% end %>
+									</div>
+								</div>
 							<% end  %>
 
-							<div class="like_count">
+							<!-- <div class="like_count">
 								<%= photo.get_upvotes.size %> <%=  "Like".pluralize(photo.get_upvotes.size) %>
-							</div>
+							</div> -->
 
 						</div>
 
