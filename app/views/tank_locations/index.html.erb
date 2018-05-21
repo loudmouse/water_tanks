@@ -2,30 +2,4 @@
 
 <h1>TankLocations</h1>
 
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Address</th>
-      <th scope="col">Photo</th>
-      <th scope="col">Show</th>
-      <% if user_signed_in? %>
-      <th scope="col">Edit</th>
-      <% end %>
-    </tr>
-  </thead>
-  <% @tank_locations.each do |tl| %>
-    <tr>
-
-      <td><%= tl.address %></td>
-      <% if tl.photos.first %>
-        <td><%= image_tag tl.photos.first.image.url(:medium) %></td>
-      <% end %>
-      <% if user_signed_in? %>
-        <td><%= link_to "Show", tank_location_path(tl) %></td>
-        <td><%= link_to "edit", edit_tank_location_path(tl) %></td>
-      <% else %>
-        <td><%= link_to "Show", tank_location_path(tl) %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
+<div id="tank_locations"><%= render 'tank_locations' %></div>
