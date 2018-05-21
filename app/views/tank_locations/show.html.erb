@@ -30,14 +30,15 @@
 							<p class="tank_info">Photo By:<br> <%= photo.user.email  %> </p>
 
 							<% if current_user %>
-								<%= link_to 'Up Vote', like_photo_path(photo), method: 'PUT' %>
-								<%= link_to 'Down Vote', dislike_photo_path(photo), method: 'PUT' %>
+								<%= link_to like_photo_path(photo), method: 'PUT' do %>
+									<i class="fa fa-arrow-up" aria-hidden="true"></i>
+								<% end %>
 							<% end  %>
 
-							<div class="votes">
-								<%= photo.get_upvotes.size %>
-								<%= photo.get_downvotes.size %>
+							<div class="like_count">
+								<%= photo.get_upvotes.size %> <%=  "Like".pluralize(photo.get_upvotes.size) %>
 							</div>
+
 						</div>
 
 					<% end %>
