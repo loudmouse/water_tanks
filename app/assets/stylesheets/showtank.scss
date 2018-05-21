@@ -22,19 +22,34 @@
         width: 100%;
         .tank_info_wrapper {
           position: relative;
-           width: 30%;
+           width: 47%;
            float: left;
            margin-right: 2.5%;
+           margin-bottom: 2.5%;
            img {
              width:100%;
              max-width: 100%;
              border-radius: .5em;
            }
            .tank_info {
-             float:left;
+             float:right;
              font-size: .75em;
+             font-weight: 700;
              color: $secondary;
-             margin: 0.5em 0;
+             margin: 0.8em;
+             padding: .3em;
+             border-radius: .5em;
+             top: 0;
+          	 left: 0;
+          	 position: absolute;
+             background: $light_gray;
+             opacity: .7;
+             i {
+               opacity: 1;
+             }
+             .photo_credit {
+               opacity: 1;
+             }
            }
            .voting {
              float:right;
