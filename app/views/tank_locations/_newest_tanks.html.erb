@@ -21,13 +21,22 @@
               <% end %>
             </div>
 
+          <div class="tank_location_buttons">
+            <% if user_signed_in? %>
+              <button class="show_button">
+                <%= link_to "View", tank_location_path(tl) %>
+              </button>
+              <button class="edit_button">
+                <%= link_to "Edit", edit_tank_location_path(tl) %>
+              </button>
+            <% else %>
+              <button class="show_button">
+                <%= link_to "View", tank_location_path(tl) %>
+              </button>
+            <% end %>
+          </div>
 
-          <% if user_signed_in? %>
-            <p><%= link_to "Show", tank_location_path(tl) %></p>
-            <p><%= link_to "edit", edit_tank_location_path(tl) %></p>
-          <% else %>
-            <p><%= link_to "Show", tank_location_path(tl) %></p>
-          <% end %>
+
         </div>
       <% end %>
     </div>
