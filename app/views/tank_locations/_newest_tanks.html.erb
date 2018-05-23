@@ -12,12 +12,15 @@
             <%= image_tag tl.photos.first.image.url(:medium) %>
           <% end %>
           <h3 class="address"><%= tl.address %></h3>
-          <p class="tank_info">
-            Mapped by: <%= tl.user.email %>
-            <% if tl.neighborhood %>
-              in <%= tl.neighborhood %>
-            <% end %>
-          </p>
+            <div class="mapped_by">
+              <i class="fa fa-user" aria-hidden="true"></i><span class="mapped_by_user"><%= tl.user.email %></span>
+            </div>
+            <div class="neighborhood">
+              <% if tl.neighborhood %>
+                <i class="fa fa-map-marker" aria-hidden="true"></i><span class="neighborhood_label"><%= tl.neighborhood %></span>
+              <% end %>
+            </div>
+
 
           <% if user_signed_in? %>
             <p><%= link_to "Show", tank_location_path(tl) %></p>

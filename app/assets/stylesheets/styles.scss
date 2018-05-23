@@ -239,21 +239,52 @@ h1, h2, h3, h4, h5, h6 {
      float: left;
      margin-right: 2.5%;
      text-align: center;
+     position: relative;
      img {
        width:100%;
        max-width: 100%;
        border-radius: .5em;
+     }
+     .mapped_by {
+       top: 0;
+       left: 0;
+       position: absolute;
+       background: $light_gray;
+       opacity: .7;
+       font-size: .75em;
+       font-weight: 700;
+       color: $secondary;
+       margin: 0.8em;
+       padding: .3em;
+       border-radius: .5em;
+       i, .mapped_by_user {
+         opacity: 1;
+         color: $white;
+       }
+     }
+     .neighborhood {
+       position: absolute;
+       top: 0;
+       right: 0%;
+       background: $light_gray;
+       opacity: .7;
+       font-size: .75em;
+       font-weight: 700;
+       color: $secondary;
+       margin: 0.8em;
+       padding: .3em;
+       border-radius: .5em;
+       i, .neighborhood_label {
+         opacity: 1;
+         color: $white;
+       }
      }
      .address {
        font-size: .80em;
        margin: 1em 0 0 0;
        color: $main;
      }
-     .tank_info {
-       font-size: .75em;
-       color: $secondary;
-       margin: 0.5em 0;
-     }
+
   }
 }
 
