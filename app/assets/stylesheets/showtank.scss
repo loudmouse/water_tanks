@@ -21,18 +21,69 @@
       .row {
         width: 100%;
         .tank_info_wrapper {
-           width: 30%;
+          position: relative;
+           width: 70%;
            float: left;
            margin-right: 2.5%;
+           margin-bottom: 2.5%;
            img {
              width:100%;
              max-width: 100%;
              border-radius: .5em;
            }
            .tank_info {
+             float:right;
              font-size: .75em;
+             font-weight: 700;
              color: $secondary;
-             margin: 0.5em 0;
+             margin: 0.8em;
+             padding: .3em;
+             border-radius: .5em;
+             top: 0;
+          	 left: 0;
+          	 position: absolute;
+             background: $light_gray;
+             opacity: .7;
+             i {
+               opacity: 1;
+             }
+             .photo_credit {
+               opacity: 1;
+             }
+           }
+           .voting {
+             float:right;
+             margin: .5em;
+             padding: 0em 0.6em 0.2em 0.6em;
+             background: $light_gray;
+             opacity: .7;
+             border-radius: .5em;
+             width: 40px;
+             position: absolute;
+             top: 0;
+	           right: 0%;
+             .vote_counter {
+               width: 40px;
+               margin: 0 auto;
+               a {
+                 opacity: 1;
+                 color: $secondary;
+                 font-size: 80%;
+                 font-weight: 700;
+               }
+               i {
+                 opacity: 1;
+                 color: $red;
+                 font-size: 80%;
+               }
+               .vote_count {
+                 opacity: 1;
+                 color: $secondary;
+                 font-size: 80%;
+                 font-weight: 700;
+               }
+             }
+
            }
         }
       }

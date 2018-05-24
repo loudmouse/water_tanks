@@ -27,17 +27,30 @@
 								<%= image_tag photo.image.url(:medium) %>
 							</div>
 
-							<p class="tank_info">Photo By:<br> <%= photo.user.email  %> </p>
+							<p class="tank_info"><i class="fa fa-camera" aria-hidden="true"></i>  <span class="photo_credit"><%= photo.user.email  %></span> </p>
 
 							<% if current_user %>
-								<%= link_to 'Up Vote', like_photo_path(photo), method: 'PUT' %>
-								<%= link_to 'Down Vote', dislike_photo_path(photo), method: 'PUT' %>
+								<div class="voting">
+									<div class="vote_counter">
+										<%= link_to like_photo_path(photo), method: 'PUT' do %>
+											<i class="fa fa-heart" aria-hidden="true"></i> <span class="vote_count"><%= photo.get_upvotes.size %> </span>
+										<% end %>
+									</div>
+								</div>
 							<% end  %>
 
-							<div class="votes">
-								<%= photo.get_upvotes.size %>
-								<%= photo.get_downvotes.size %>
-							</div>
+							<% if !current_user %>
+								<div class="voting">
+									<div class="vote_counter">
+											<i class="fa fa-heart" aria-hidden="true"></i> <span class="vote_count"><%= photo.get_upvotes.size %> </span>
+									</div>
+								</div>
+							<% end  %>
+
+							<!-- <div class="like_count">
+								<%= photo.get_upvotes.size %> <%=  "Like".pluralize(photo.get_upvotes.size) %>
+							</div> -->
+
 						</div>
 
 					<% end %>
