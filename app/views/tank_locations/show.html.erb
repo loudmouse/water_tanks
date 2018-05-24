@@ -25,7 +25,7 @@
 						<div class="tank_info_wrapper">
 							<div class="tank-image">
 								<%= image_tag photo.image.url(:medium) %>
-								<% if current_user.photos.include?(photo) %>
+								<% if current_user && current_user.photos.include?(photo) %>
 									<%= button_to "Remove Photo", tank_location_photo_path(photo), method: :delete, data: { confirm: "Are you sure?" } %>
 							  <% end %>
 							</div>
