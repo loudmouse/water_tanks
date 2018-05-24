@@ -271,9 +271,10 @@ h1, h2, h3, h4, h5, h6 {
        margin: 0.8em;
        padding: .3em;
        border-radius: .5em;
-       i, .mapped_by_user {
+       i {
          opacity: 1;
-
+         color: $primary;
+         margin-right:.3em;
        }
      }
      .neighborhood {
@@ -288,9 +289,10 @@ h1, h2, h3, h4, h5, h6 {
        margin: 0.8em;
        padding: .3em;
        border-radius: .5em;
-       i, .neighborhood_label {
+       i {
          opacity: 1;
-         
+         color: $red;
+         margin-right:.3em;
        }
      }
      .address {
