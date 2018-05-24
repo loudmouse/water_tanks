@@ -15,6 +15,16 @@
   </head>
   <body class="contianer <%= controller_name %>_<%= action_name %>">
 
+    <% if alert %>
+      <div id="notice_wrapper">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% elsif notice %>
+      <div id="notice_wrapper">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
     <header id="top_header" class="clearfix">
       <div class="wrapper">
       <%= link_to image_tag("chicago-water-tanks-combo-500x150.png", class: 'logo'), root_path %>
@@ -34,16 +44,21 @@
     </header>
 
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-
     <% unless current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
       <%= render "layouts/header" %>
     <% end %>
 
     <%= yield %>
 
+    <script>
+    	$(document).ready(function(){
+    		setTimeout(function() {
+    			$('#notice_wrapper').fadeOut("slow", function() {
+    				$this.remove();
+    			});
+    		}, 2500 );
+    	});
+    </script>
 
   </body>
 
