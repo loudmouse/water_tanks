@@ -4,6 +4,7 @@ class TankLocationsController < ApplicationController
   def index
     @tank_locations = TankLocation.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
     make_markers(@tank_locations)
+    @latest_tank = TankLocation.last
   end
 
   def new
