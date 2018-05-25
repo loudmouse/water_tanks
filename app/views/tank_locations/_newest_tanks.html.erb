@@ -22,7 +22,7 @@
             </div>
 
           <div class="tank_location_buttons">
-            <% if user_signed_in? %>
+            <% if (user_signed_in? && (current_user.id == tl.user_id)) %>
               <button class="show_button">
                 <%= link_to "View", tank_location_path(tl) %>
               </button>
