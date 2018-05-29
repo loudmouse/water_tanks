@@ -2,7 +2,7 @@ class TankLocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tank_locations = TankLocation.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
+    @tank_locations = TankLocation.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
     make_markers(@tank_locations)
     @latest_tank = TankLocation.last
   end
