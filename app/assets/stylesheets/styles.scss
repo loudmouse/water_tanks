@@ -88,38 +88,43 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
   }
-  #featured_tank {
-    width: 275px;
-    position: relative;
-    float: left;
-    .featured_tank_image {
-      width: 100%;
-      max-width: 100%;
-      border-radius: .5em;
-      -webkit-box-shadow: 0px 0px 76px 0px rgba(0,0,0,0.47);
-      -moz-box-shadow: 0px 0px 76px 0px rgba(0,0,0,0.47);
-      box-shadow: 0px 0px 76px 0px rgba(0,0,0,0.47);
+  .featured_tank_wrapper {
+    background-color: rgba(89,89,89,0.90);
+    border-radius: .5em;
+    #featured_tank {
+      width: 275px;
+      position: relative;
+      float: left;
+      margin: 2em 0 2em 2em;
+      .featured_tank_image {
+        width: 100%;
+        max-width: 100%;
+        border-radius: .5em;
+        -webkit-box-shadow: 0px 0px 76px 0px rgba(0,0,0,0.47);
+        -moz-box-shadow: 0px 0px 76px 0px rgba(0,0,0,0.47);
+        box-shadow: 0px 0px 76px 0px rgba(0,0,0,0.47);
+      }
     }
-  }
-  #content {
-    float: left;
-    width: 500px;
-    margin-left: 100px;
-    .title {
-      display: inline;
-      font-size: 1.75em;
-      color: $white;
-    }
-    .description {
-      color: #bbbebf;
-      font-size: 1em;
-      line-height: 2;
-    }
-    .info {
-      color: $white;
-      font-size: .8em;
-      font-weight: 700;
-      margin-top: 3em;
+    #content {
+      float: left;
+      width: 360px;
+      margin: 4em 2em 0 2em;
+      .title {
+        display: inline;
+        font-size: 1em;
+        color: $white;
+      }
+      .description {
+        color: #bbbebf;
+        font-size: 1em;
+        line-height: 2;
+      }
+      .info {
+        color: $white;
+        font-size: .8em;
+        font-weight: 700;
+        margin-top: 3em;
+      }
     }
   }
 }
