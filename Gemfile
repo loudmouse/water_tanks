@@ -70,3 +70,7 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+
+gem 'flickraw', '~> 0.9.9'
+
+gem 'figaro'
