@@ -9,9 +9,11 @@
 
 			<%= render "layouts/map" %>
 
+		<div class="comments">
 			<%= render partial: "comments/comments", locals: {commentable: @tank_location} %>
 			<%= render partial: "comments/form", locals: {commentable: @tank_location} %>
-
+		</div>
+		
 	</section>
 
 	<section id="single_tank_photos" >

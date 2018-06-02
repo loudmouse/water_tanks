@@ -19,6 +19,20 @@
     }
     #map_section {
       padding: 0em 0;
+      border: none;
+    }
+    .comments {
+      margin: 0 2em 0 2em;
+      background-color: rgba(89,89,89,0.90);
+      border-radius: .5em;
+      padding: 1em;
+      h3 {
+        color: $white;
+        text-align: center;
+      }
+      .comment {
+        color: $white;
+      }
     }
   }
 
