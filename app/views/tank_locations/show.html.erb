@@ -2,9 +2,9 @@
 	<section id="single_tank_map">
 
 		<div class="single_tank_info">
-			<p>Address:<br><%= @tank_location.address %></p>
-			<p>Mapped By:<br><%= @tank_location.user.email %></p>
-			<p>Neighborhood:<br><%= @tank_location.neighborhood %></p>
+			<p><span>Address:</span><br><%= @tank_location.address %></p>
+			<p><span>Neighborhood:</span><br><%= @tank_location.neighborhood %></p>
+			<p><span>Mapped By:</span><br><%= @tank_location.user.email %></p>
 		</div>
 
 			<%= render "layouts/map" %>
