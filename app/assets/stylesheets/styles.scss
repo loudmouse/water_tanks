@@ -129,6 +129,47 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+
+#stats_container {
+  padding: 2em 0 0 0;
+  width: 730px;
+  margin: 0 auto;
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 1em;
+  }
+  .tanks_stat, .users_stat, .photos_stat {
+    background: $highlight;
+    border-radius: .5em;
+    padding: 1em;
+    float: left;
+    margin-right: 1em;
+    color: $white;
+    font-weight: 700;
+    text-transform: uppercase;
+    min-width: 225px;
+    .count_title {
+      font-size: 1.2em;
+      font-weight: 700;
+      text-align: center;
+    }
+    .fa {
+      font-size: 3em;
+      float: left;
+      margin-top: 0.3em;
+      margin-left: 20%;
+    }
+    .count {
+      font-size: 3em;
+      float: right;
+      margin-right: 20%;
+    }
+  }
+}
+
+
 #map_section {
   border-bottom: 1px solid #d4d4d4;
   padding: 5em 0;
