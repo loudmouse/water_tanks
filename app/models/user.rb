@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_many :comments
 
   acts_as_voter
+  validates :user_name, uniqueness: true
 
 end
