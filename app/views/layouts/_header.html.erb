@@ -7,7 +7,7 @@
       <div id="content">
         <h2 class="title"><%= @latest_tank.address %></h2>
         <p class="description"><%= @latest_tank.neighborhood %></p>
-        <p class="info">Mapped by <%= @latest_tank.user.email %> on <%= @latest_tank.created_at.to_date %></p>
+        <p class="info">Mapped by <%= @latest_tank.user.user_name %> on <%= @latest_tank.created_at.to_date %></p>
       </div>
     </div>
   </div>
