@@ -5,6 +5,8 @@ class TankLocationsController < ApplicationController
     @tank_locations = TankLocation.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
     make_markers(@tank_locations)
     @latest_tank = TankLocation.last
+    @users = User.all
+    @photos = Photo.all
   end
 
   def new
