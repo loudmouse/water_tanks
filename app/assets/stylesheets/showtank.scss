@@ -4,13 +4,35 @@
     max-width: 50%;
     float: left;
     .single_tank_info {
-      margin: 0 0 0 2em;
+      margin: 0 2em 0 2em;
+      background-color: rgba(89,89,89,0.90);
+      border-radius: .5em;
+      color: $white;
+      padding: 1em;
+      span {
+        font-weight: 700;
+        color: $light_gray;
+      }
     }
     .map_title, .add_a_tank {
       display: none;
     }
     #map_section {
       padding: 0em 0;
+      border: none;
+    }
+    .comments {
+      margin: 0 2em 0 2em;
+      background-color: rgba(89,89,89,0.90);
+      border-radius: .5em;
+      padding: 1em;
+      h3 {
+        color: $white;
+        text-align: center;
+      }
+      .comment {
+        color: $white;
+      }
     }
   }
 
@@ -22,7 +44,7 @@
         width: 100%;
         .tank_info_wrapper {
           position: relative;
-           width: 70%;
+           width: 90%;
            float: left;
            margin-right: 2.5%;
            margin-bottom: 2.5%;
