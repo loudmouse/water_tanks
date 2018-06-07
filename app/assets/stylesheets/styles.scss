@@ -384,8 +384,14 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
   }
   h2 {
-    font-size: 1.75em;
+    font-size: 1.6em;
     color: $white;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.2em;
+    color: $white;
+    font-weight: 700;
   }
   .sign_in_form {
     margin-top: 3em;
@@ -401,6 +407,9 @@ h1, h2, h3, h4, h5, h6 {
       font-size: .8em;
       color: $white;
     }
+    label, i, em {
+      color: $white;
+    }
     .button {
       border: none;
       outline: none;
@@ -411,6 +420,14 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: 700;
       font-size: .9em;
       margin-top: 3em;
+    }
+    .account_deletion {
+      padding-top: 4em;
+      border-top: 1px solid $light_gray;
+      margin-top: 5em;
+      .button {
+        background: $red;
+      }
     }
   }
 
@@ -618,7 +635,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     .sign_in_form {
       margin-top: 2em;
-      input[type="email"], input[type="password"] {
+      input {
         width: 90%;
         margin:0 0 1em 0;
       }
