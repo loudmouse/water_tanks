@@ -4,9 +4,7 @@
 		<div class="single_tank_info">
 			<p><span>Address:</span><br><%= @tank_location.address %></p>
 			<p><span>Neighborhood:</span><br><%= @tank_location.neighborhood %></p>
-			<% if @tank_location.user.user_name %>
 			<p><span>Mapped By:</span><br><%= @tank_location.user.user_name %></p>
-			<% end %>
 		</div>
 
 			<%= render "layouts/map" %>
@@ -30,9 +28,7 @@
 							<div class="tank-image">
 								<%= image_tag photo.image.url(:medium) %>
 							</div>
-							<% if photo.user.user_name %>
 								<p class="tank_info"><i class="fa fa-camera" aria-hidden="true"></i>  <span class="photo_credit"><%= photo.user.user_name  %></span> </p>
-							<% end %>
 							<% if current_user %>
 								<div class="voting">
 									<div class="vote_counter">
