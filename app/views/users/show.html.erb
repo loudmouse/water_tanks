@@ -3,7 +3,11 @@
 <p><%= @user.email %></p>
 <p><%= @user.tank_locations.count %></p>
 <p><%= @user.photos.count %></p>
+<p><%= image_tag @user.profile_photo.url(:medium) %></p>
+
 
 <% @user_tanks_mapped.each do |tank| %>
   <li><%= link_to tank.address, tank_locations_path(tank) %></li>
+
+
 <% end %>
