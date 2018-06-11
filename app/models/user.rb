@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :tank_locations
   has_many :comments
 
-  has_attached_file :profile_photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/chicago-water-tanks-icon-300x300.png"
+  has_attached_file :profile_photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "profile-photo-placeholder.png"
   validates_attachment_content_type :profile_photo, :content_type => /\Aimage\/.*\Z/
 
   acts_as_voter

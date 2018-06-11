@@ -5,7 +5,7 @@
   .profile-row {
     .profile-photo img {
       float: left;
-      width: 120px;
+      width: 80px;
       border-radius: 1em;
     }
     .profile-username h3 {
@@ -14,7 +14,8 @@
       font-size: 1.5em;
       font-weight: 700;
       vertical-align: middle;
-      line-height: 120px;
+      line-height: 80px;
+      color: $secondary;
     }
   }
 
@@ -85,7 +86,7 @@
         font-size: 1em;
         text-transform: uppercase;
         font-weight: 700;
-        
+
         margin-bottom: 1em;
         margin-bottom: 1em;
       }
@@ -102,6 +103,36 @@
     }
   }
 }
+
+.start-your-profile {
+  text-align: center;
+  padding-bottom: 5em;
+  h3 {
+    padding: 2em 0 2em 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: $secondary;
+  }
+  .button {
+    margin:  0 auto;
+    width: 100px;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    padding: 1em 2em;
+    border-radius: 2em;
+    background: $highlight;
+    color: $white;
+    font-weight: 700;
+    font-size: 1em;
+    &:hover {
+      background: $dark_highlight;
+      text-decoration: none;
+      color: $off_white;
+    }
+  }
+}
+
 
 @media only screen and (max-width: 575px) {
 

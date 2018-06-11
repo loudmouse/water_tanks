@@ -3,8 +3,9 @@
     <div class="profile-container">
       <div class="profile-row clearfix">
         <div class="profile-photo"><%= image_tag @user.profile_photo.url(:medium) %></div>
-        <div class="profile-username"><h3><%= @user.user_name %></h3></div>
+        <div class="profile-username"><h3>Hi, <%= @user.user_name %></h3>.</div>
       </div>
+      <% if @user.tank_locations.count > 0 %>
       <div class="profile-stats-row clearfix">
         <div class="user-mapped-count"><span><i class="fa fa-map-marker" aria-hidden="true"></i><%= @user.tank_locations.count %></span> Tanks Mapped</div>
         <div class="user-photo-count"><span><i class="fa fa-camera" aria-hidden="true"></i><%= @user.photos.count %></span> Photos Added</div>
@@ -26,8 +27,16 @@
       </div>
     </div>
 
+    <%= render "layouts/map" %>
+    <% end %>
 
-  <%= render "layouts/map" %>
+
+    <div class="start-your-profile">
+      <% if @user.tank_locations.count < 1 %>
+        <h3>Map a Tank to Unlock Your Profile</h3>
+        <%= link_to "Add a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "button" %>
+      <% end %>
+    </div>
 
   </div>
 </div>
