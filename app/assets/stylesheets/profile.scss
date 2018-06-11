@@ -1,0 +1,167 @@
+.profile-wrapper {
+  margin: 0 auto;
+  width: 700px;
+  padding: 1em;
+  .profile-row {
+    .profile-photo img {
+      float: left;
+      width: 120px;
+      border-radius: 1em;
+    }
+    .profile-username h3 {
+      float: right;
+      text-transform: uppercase;
+      font-size: 1.5em;
+      font-weight: 700;
+      vertical-align: middle;
+      line-height: 120px;
+    }
+  }
+
+  .profile-stats-row {
+    background: $highlight;
+    color: $white;
+    padding: 1em;
+    margin: 1em 0 1em 0;
+
+    .user-mapped-count {
+      float: left;
+      margin-left: .2em;
+      font-weight: 700;
+      span {
+        font-weight: 700;
+        font-size: 1.2em;
+      }
+      i {
+        margin-right: 1em;
+      }
+    }
+    .user-photo-count {
+      float: right;
+      margin-right: .2em;
+      font-weight: 700;
+      span {
+        font-weight: 700;
+        font-size: 1.2em;
+      }
+      i {
+        margin-right: 1em;
+      }
+    }
+  }
+
+  .recent-tank-photo img {
+    margin: 0 auto;
+    display: block;
+    width: 250px;
+  }
+  .recent-activity-row {
+    float: left;
+  }
+  .recent-activity-row {
+    .recent-activity, .latest-neighborhood {
+      h6 {
+        text-align: center;
+      }
+    }
+    .recent-activity h6 {
+      font-size: .8em;
+      span {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1em;
+      }
+    }
+    .latest-neighborhood {
+      text-transform: uppercase;
+    }
+  }
+  .users-tanks {
+    float: right;
+    padding-right: 1em;
+    .mapped-tank-title {
+      h2 {
+        text-align: center;
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: 700;
+        
+        margin-bottom: 1em;
+        margin-bottom: 1em;
+      }
+    }
+    ul {
+      list-style-type: none;
+      li {
+        line-height: .5em;
+        a {
+          color: $secondary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+
+  .profile-wrapper {
+    margin: 0 auto;
+    width: 300px;
+    background: #d7d7d7;
+    padding: 1em;
+    .recent-tank-photo img {
+      margin: 0 auto;
+      display: block;
+      width: 250px;
+    }
+    .recent-activity-row {
+      .recent-activity, .latest-neighborhood {
+        h6 {
+          text-align: center;
+        }
+      }
+      .recent-activity h6 {
+        font-size: .8em;
+        span {
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 1em;
+        }
+      }
+    }
+    .profile-stats-row {
+      border-top: 1px solid #303030;
+      border-bottom: 1px solid #303030;
+      .user-mapped-count {
+        float: left;
+        margin-left: .2em;
+        span {
+          font-weight: 700;
+        }
+      }
+      .user-photo-count {
+        float: right;
+        margin-right: .2em;
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+    .profile-row {
+      .profile-photo img {
+        float: left;
+        width: 100px;
+        border-radius: 1em;
+      }
+      .profile-username h3 {
+        float: right;
+        text-transform: uppercase;
+        font-size: 1.3em;
+        font-weight: 700;
+
+      }
+    }
+  }
+
+}

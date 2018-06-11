@@ -7,8 +7,8 @@
 			<p><span>Mapped By:</span><br><%= @tank_location.user.user_name %></p>
 		</div>
 
-			<%= render "layouts/map" %>
-
+		<%= render "layouts/map" %>
+		
 		<div class="comments">
 			<%= render partial: "comments/comments", locals: {commentable: @tank_location} %>
 			<%= render partial: "comments/form", locals: {commentable: @tank_location} %>
