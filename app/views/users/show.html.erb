@@ -1,2 +1,42 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="wrapper">
+  <div class="profile-wrapper">
+    <div class="profile-container">
+      <div class="profile-row clearfix">
+        <div class="profile-photo"><%= image_tag @user.profile_photo.url(:medium) %></div>
+        <div class="profile-username"><h3>Hi, <%= @user.user_name %></h3>.</div>
+      </div>
+      <% if @user.tank_locations.count > 0 %>
+      <div class="profile-stats-row clearfix">
+        <div class="user-mapped-count"><span><i class="fa fa-map-marker" aria-hidden="true"></i><%= @user.tank_locations.count %></span> Tanks Mapped</div>
+        <div class="user-photo-count"><span><i class="fa fa-camera" aria-hidden="true"></i><%= @user.photos.count %></span> Photos Added</div>
+      </div>
+      <div class="mapped-tanks-section clearfix">
+        <div class="recent-activity-row clearfix">
+          <div class="recent-activity"><h6>Active <span><%= time_ago_in_words(@user.photos.last.created_at) %> ago</span> in</h6></div>
+          <div class="latest-neighborhood"><h6><%= @user.photos.last.tank_location.neighborhood %></h6></div>
+          <div class="recent-tank-photo"><%= image_tag @user.photos.last.image.url(:medium) %></div>
+        </div>
+        <div class="users-tanks clearfix">
+          <div class="mapped-tank-title"><h2><%= @user.user_name %>'s Mapped Tanks</h2></div>
+          <% @user_tanks_mapped.each do |tank| %>
+          <ul>
+            <li><%= link_to tank.address, tank_location_path(tank) %></li>
+          </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <%= render "layouts/map" %>
+    <% end %>
+
+
+    <div class="start-your-profile">
+      <% if @user.tank_locations.count < 1 %>
+        <h3>Map a Tank to Unlock Your Profile</h3>
+        <%= link_to "Add a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "button" %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
