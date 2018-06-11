@@ -27,6 +27,9 @@
 						<div class="tank_info_wrapper">
 							<div class="tank-image">
 								<%= image_tag photo.image.url(:medium) %>
+								<% if current_user && current_user.photos.include?(photo) %>
+									<%= button_to "Remove Photo", tank_location_photo_path(@tank_location, photo), method: :delete, data: { confirm: "Are you sure?" } %>
+								<% end %>
 							</div>
 								<p class="tank_info"><i class="fa fa-camera" aria-hidden="true"></i>  <span class="photo_credit"><%= photo.user.user_name  %></span> </p>
 							<% if current_user %>
