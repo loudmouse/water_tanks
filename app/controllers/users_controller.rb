@@ -9,8 +9,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_tanks_mapped = @user.tank_locations
-    make_markers(@user_tanks_mapped)
+    if @user == current_user 
+       @user_tanks_mapped = @user.tank_locations
+       make_markers(@user_tanks_mapped)
+    else 
+      redirect_to tank_locations_path
+    end 
   end
 
   def destroy
