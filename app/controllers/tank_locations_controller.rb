@@ -1,5 +1,6 @@
 class TankLocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :upsate, :edit, :destroy]
 
   def index
     @tank_locations = TankLocation.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
