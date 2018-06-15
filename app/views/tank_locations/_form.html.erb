@@ -37,11 +37,15 @@
                <div>
                   <%= form.fields_for :photos do |photo_form| %>
                     <label class="fileContainer">
-                      <%= photo_form.file_field :image, id: :photo_image %>
+                      <%= photo_form.file_field :image, id: :photo_image, onchange: "imagePreview(this)" %>
                       <i class="fa fa-camera"></i><p>Upload a Photo</p>
                     </label>
                   <% end %>
                </div>
+
+               <div>
+                <%= image_tag("", id: "imgpreview", :style => "width: 150px; height: 150px" ) %>
+              </div>
 
                <div>
                  <%= form.submit "Submit", class: "button" %>
