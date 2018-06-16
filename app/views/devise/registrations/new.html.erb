@@ -7,7 +7,16 @@
           <%= devise_error_messages! %>
 
           <div class="field">
+            <%= f.text_field :user_name, placeholder: 'Username', autofocus: true, autocomplete: "Username" %>
+          </div>
+
+          <div class="field">
             <%= f.email_field :email, placeholder: 'Email Address', autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="field">
+             <%= f.label :profile_photo %>
+            <%= f.file_field :profile_photo, required: false %>
           </div>
 
           <div class="field">

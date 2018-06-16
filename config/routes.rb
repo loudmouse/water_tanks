@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root to: 'tank_locations#index'
+  
+  resources :users
 
   resources :tank_locations do
     resources :photos, only: [ :create, :destroy] do

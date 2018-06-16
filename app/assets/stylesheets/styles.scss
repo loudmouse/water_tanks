@@ -129,6 +129,47 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+
+#stats_container {
+  padding: 2em 0 0 0;
+  width: 730px;
+  margin: 0 auto;
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 1em;
+  }
+  .tanks_stat, .users_stat, .photos_stat {
+    background: $highlight;
+    border-radius: .5em;
+    padding: 1em;
+    float: left;
+    margin-right: 1em;
+    color: $white;
+    font-weight: 700;
+    text-transform: uppercase;
+    min-width: 225px;
+    .count_title {
+      font-size: 1.2em;
+      font-weight: 700;
+      text-align: center;
+    }
+    .fa {
+      font-size: 3em;
+      float: left;
+      margin-top: 0.3em;
+      margin-left: 20%;
+    }
+    .count {
+      font-size: 3em;
+      float: right;
+      margin-right: 20%;
+    }
+  }
+}
+
+
 #map_section {
   border-bottom: 1px solid #d4d4d4;
   padding: 5em 0;
@@ -343,12 +384,18 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
   }
   h2 {
-    font-size: 1.75em;
+    font-size: 1.6em;
     color: $white;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.2em;
+    color: $white;
+    font-weight: 700;
   }
   .sign_in_form {
     margin-top: 3em;
-    input[type="email"],input[type="password"] {
+    input[type="email"],input[type="password"], input[type="text"] {
       width: 48%;
       margin: 1em .5%;
       height: 3.25em;
@@ -358,6 +405,9 @@ h1, h2, h3, h4, h5, h6 {
       background: #404043;
       padding: .5em 1.25em;
       font-size: .8em;
+      color: $white;
+    }
+    label, i, em {
       color: $white;
     }
     .button {
@@ -370,6 +420,24 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: 700;
       font-size: .9em;
       margin-top: 3em;
+    }
+    .account_deletion {
+      padding-top: 4em;
+      border-top: 1px solid $light_gray;
+      margin-top: 5em;
+      .button {
+        background: $red;
+      }
+    }
+  }
+
+  #error_explanation {
+    ul{
+      list-style-type: none;
+      li{
+        color: #ffffff;
+        text-decoration: none;
+      }
     }
   }
 }
@@ -567,7 +635,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     .sign_in_form {
       margin-top: 2em;
-      input[type="email"], input[type="password"] {
+      input {
         width: 90%;
         margin:0 0 1em 0;
       }
