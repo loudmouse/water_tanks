@@ -1,5 +1,7 @@
 class PhotosController < ApplicationController
   before_action :set_tank_location, :only => [ :create, :destroy ]
+  before_action :authenticate_user!
+
 
   def new
     @photo = current_user.photos.build
