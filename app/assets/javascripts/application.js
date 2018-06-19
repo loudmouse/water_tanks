@@ -16,3 +16,14 @@
 //= require gmaps/google
 //= require jquery
 //= require_tree .
+
+function imagePreview(input) {
+  console.log("executing")
+  if (input.files && input.files[0]) {
+    const filerd = new FileReader();
+    filerd.onload = function(e) {
+      $('#imgpreview').attr("src", e.target.result);
+    }
+    filerd.readAsDataURL(input.files[0]);
+  }
+}
