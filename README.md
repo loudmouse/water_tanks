@@ -26,9 +26,7 @@ You'll also need Rails installed on your local machine. We're using:
 Rails 5.1.6
 ```
 
-You'll also want to create a Google Maps API - its free. You can create one here:
-
-   Create a free [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
+You'll also want to create a Google Maps API - its free. You can create one here: [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
 ---
 
@@ -36,9 +34,7 @@ You'll also want to create a Google Maps API - its free. You can create one here
 
 To install and play around with Chicago Water Tanks on your local machine follow these steps:
 
-1. Visit the repository on GitHub
-
-[Chicago Water Tanks on GitHub](https://github.com/loudmouse/water_tanks)
+1. Visit the repository: [Chicago Water Tanks on GitHub](https://github.com/loudmouse/water_tanks)
 
 
 2. Clone the repository (for more details on this step visit [this resource](https://services.github.com/on-demand/github-cli/clone-repo-cli). From your command line, type:
@@ -71,9 +67,7 @@ rails db:install
 rails db:seed
 ```
 
-7. Seed the database with sample data. The sample data includes water tank locations, photos, and two users (1 admin and one non-admin). From your browser, visit:
-
-[http://localhost:3000/](http://localhost:3000/)
+7. Seed the database with sample data. The sample data includes water tank locations, photos, and two users (1 admin and one non-admin). From your browser, visit: [http://localhost:3000/](http://localhost:3000/)
 
 
 You should now have a functioning build of Chicago Water Tanks on your local machine to play around with.
