@@ -2,9 +2,15 @@
 
 The city of Chicago was once home to hundreds of water tanks. They are quickly disappearing from the skyline as they are be taken down across the city. This project is an attempt to map, photograph, and document as many of these water tanks before they're gone forever.
 
+For a live version, visit: [Chicago Water Tanks](http://www.chicagowatertanks.com/)
+
+---
+
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine.
+
+---
 
 ### Prerequisites
 
@@ -22,9 +28,9 @@ Rails 5.1.6
 
 You'll also want to create a Google Maps API - its free. You can create one here:
 
-```
 Create a free [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
-```
+
+---
 
 ### Installing
 
@@ -32,9 +38,8 @@ To install and play around with Chicago Water Tanks on your local machine follow
 
 1. Visit the repository on GitHub
 
-```
 [Chicago Water Tanks on GitHub](https://github.com/loudmouse/water_tanks)
-```
+
 
 2. Clone the repository (for more details on this step visit [this resource](https://services.github.com/on-demand/github-cli/clone-repo-cli). From your command line, type:
 
@@ -68,15 +73,18 @@ rails db:seed
 
 7. Seed the database with sample data. The sample data includes water tank locations, photos, and two users (1 admin and one non-admin). From your browser, visit:
 
-```
 [http://localhost:3000/](http://localhost:3000/)
-```
+
 
 You should now have a functioning build of Chicago Water Tanks on your local machine to play around with.
+
+---
 
 ## Deployment
 
 We're currently deployed to Heroku. You can setup a free Heroku account and deploy your app there as well if you'd like.
+
+---
 
 ## Built With
 
@@ -96,10 +104,13 @@ We're currently deployed to Heroku. You can setup a free Heroku account and depl
 * [SCSS (Sassy CSS)](https://sass-lang.com/) - The CSS syntax used for front-end styling
 * [Bootstrap)](https://rubygems.org/gems/bootstrap/versions/4.0.0) - CSS framework used for styling certain sections of the application
 
+---
 
 ## Versioning
 
 Chicago Water Tanks is currently at version 1.0.
+
+---
 
 ## Authors
 
