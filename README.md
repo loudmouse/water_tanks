@@ -67,7 +67,7 @@ rails db:install
 rails db:seed
 ```
 
-7. Seed the database with sample data. The sample data includes water tank locations, photos, and two users (1 admin and one non-admin). From your browser, visit: [http://localhost:3000/](http://localhost:3000/)
+7. From your browser, visit: [http://localhost:3000/](http://localhost:3000/)
 
 
 You should now have a functioning build of Chicago Water Tanks on your local machine to play around with.
