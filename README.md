@@ -28,7 +28,7 @@ Rails 5.1.6
 
 You'll also want to create a Google Maps API - its free. You can create one here:
 
-Create a free [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
+   Create a free [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
 ---
 
