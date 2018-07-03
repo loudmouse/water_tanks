@@ -112,3 +112,8 @@ Chicago Water Tanks is currently at version 1.0.
 * **Josh Alletto** - *Initial work* - [Josh's GitHub](https://github.com/jalletto)
 
 See also the list of [contributors](https://github.com/loudmouse/water_tanks/graphs/contributors) who participated in this project.
+
+---
+
+**Screenshots**
+![Chicago Water Tanks - Home](/app/assets/images/screenshots/chicago_water_tanks_home_screenshot.png)
