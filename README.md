@@ -115,10 +115,15 @@ See also the list of [contributors](https://github.com/loudmouse/water_tanks/gra
 
 ---
 
-**Features**
+## Features
+
+**Homepage**
 
 This is the homepage where you see the most recently mapped tank, the map of tans, and a listing of all tanks with pagination.
+
 ![Chicago Water Tanks - Home](/app/assets/images/screenshots/chicago_water_tanks_home_screenshot.png)
+
+**Map a Water Tank**
 
 Click 'Add a Water Tank' to map the location of a new water tank and add his or her photo.
 1. Zoom in and click the map to set a pin - a pin drop does a couple things:
