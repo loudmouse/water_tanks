@@ -125,7 +125,7 @@ This is the homepage where you see the most recently mapped tank, the map of tan
 
 **Map a Water Tank**
 
-Click 'Add a Water Tank' to map the location of a new water tank and add his or her photo.
+Click 'Add a Water Tank' to map the location of a new water tank and add your photo.
 1. Zoom in and click the map to set a pin - a pin drop does a couple things:
   * It detects the latitudinal and longitudinal coordinates of the pin
   * It converts these coordinates into a human readable address and fills the address field
