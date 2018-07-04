@@ -132,5 +132,7 @@ Click 'Add a Water Tank' to map the location of a new water tank and add your ph
   * It detects which neighborhood your water tank belongs within and displays this info once you've hit submit
 2. Click 'Upload a Photo' to attach a photo. A photo is required.
 3. Click 'Submit'
+
 Congratulations, you've successfully mapped a water tank and added a photo!
+
 ![Chicago Water Tanks - Add a Tank](/app/assets/images/screenshots/add_a_tank_screenshot.png)
