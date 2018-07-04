@@ -115,5 +115,17 @@ See also the list of [contributors](https://github.com/loudmouse/water_tanks/gra
 
 ---
 
-**Screenshots**
+**Features**
+
+This is the homepage where you see the most recently mapped tank, the map of tans, and a listing of all tanks with pagination.
 ![Chicago Water Tanks - Home](/app/assets/images/screenshots/chicago_water_tanks_home_screenshot.png)
+
+Click 'Add a Water Tank' to map the location of a new water tank and add his or her photo.
+1. Zoom in and click the map to set a pin - a pin drop does a couple things:
+  * It detects the latitudinal and longitudinal coordinates of the pin
+  * It converts these coordinates into a human readable address and fills the address field
+  * It detects which neighborhood your water tank belongs within and displays this info once you've hit submit
+2. Click 'Upload a Photo' to attach a photo. A photo is required.
+3. Click 'Submit'
+Congratulations, you've successfully mapped a water tank and added a photo!
+![Chicago Water Tanks - Add a Tank](/app/assets/images/screenshots/add_a_tank_screenshot.png)
