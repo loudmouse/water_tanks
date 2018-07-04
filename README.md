@@ -108,8 +108,8 @@ Chicago Water Tanks is currently at version 1.0.
 
 ## Authors
 
-* **Nolan Neeley** - *Initial work* - [Nolan's GitHub](https://github.com/loudmouse)
-* **Josh Alletto** - *Initial work* - [Josh's GitHub](https://github.com/jalletto)
+* **Nolan Neeley** - [Nolan's GitHub](https://github.com/loudmouse)
+* **Josh Alletto** - [Josh's GitHub](https://github.com/jalletto)
 
 See also the list of [contributors](https://github.com/loudmouse/water_tanks/graphs/contributors) who participated in this project.
 
