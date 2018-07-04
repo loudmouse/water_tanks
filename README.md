@@ -119,7 +119,7 @@ See also the list of [contributors](https://github.com/loudmouse/water_tanks/gra
 
 **Homepage**
 
-This is the homepage where you see the most recently mapped tank, the map of tans, and a listing of all tanks with pagination.
+This is the homepage where you see the most recently mapped tank, the map of tanks, and a listing of all tanks with pagination.
 
 ![Chicago Water Tanks - Home](/app/assets/images/screenshots/chicago_water_tanks_home_screenshot.png)
 
