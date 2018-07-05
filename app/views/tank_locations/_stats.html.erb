@@ -1,19 +1,20 @@
-
-  <div id="stats_container" class="clearfix">
-      <h2 class="community_stats_title">Community Stats</h2>
-      <div class="users_stat">
-        <h3 class="count_title">Users</h3>
-        <i class="fa fa-users"></i>
-        <span class="count"><%= @users.count %></span>
-      </div>
-      <div class="tanks_stat">
-        <h3 class="count_title">Water Tanks</h3>
-        <i class="fa fa-map-marker"></i>
-        <span class="count"><%= @tank_locations.count %></span>
-      </div>
-      <div class="photos_stat">
-        <h3 class="count_title">Photos</h3>
-        <i class="fa fa-picture-o"></i>
-        <span class="count"><%= @photos.count %></span>
-      </div>
+<div class="container text-center">
+  <h2 class="community_stats_title">Community Stats</h2>
+  <div class="row">
+    <div class="col-sm users_stat">
+      <h3 class="count_title">Users</h3>
+      <i class="fa fa-users"></i>
+      <span class="count"><%= @users.count %></span>
+    </div>
+    <div class="col-sm tanks_stat">
+      <h3 class="count_title">Tanks</h3>
+      <i class="fa fa-map-marker"></i>
+      <span class="count"><%= @tank_locations.count %></span>
+    </div>
+    <div class="col-sm photos_stat">
+      <h3 class="count_title">Photos</h3>
+      <i class="fa fa-picture-o"></i>
+      <span class="count"><%= @photos.count %></span>
+    </div>
   </div>
+</div>
