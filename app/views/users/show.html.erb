@@ -17,7 +17,7 @@
       </div>
       <div class="row text-center">
         <div class="col">
-          <div class="recent-activity"><h6>Mapped <span><%= time_ago_in_words(@user.photos.last.created_at) %> ago</span> in <%= @user.photos.last.tank_location.neighborhood %> </h6></div>
+          <div class="recent-activity"><h6>Added <span><%= time_ago_in_words(@user.photos.last.created_at) %> ago</span> in <%= @user.photos.last.tank_location.neighborhood %> </h6></div>
           <div class="recent-tank-photo"><%= image_tag @user.photos.last.image.url(:medium) %></div>
         </div>
       </div>
