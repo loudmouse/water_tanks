@@ -149,4 +149,4 @@ From your profile you can:
 - Check how many photos you've contributed
 - See a map with all the water tanks you've mapped
 
-![Chicago Water Tanks - Unlock Your Profile](/app/assets/images/screenshots/#.png)
+![Chicago Water Tanks - Unlock Your Profile](/app/assets/images/screenshots/profile_page.jpg)
