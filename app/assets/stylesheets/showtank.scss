@@ -1,155 +1,164 @@
-.container-fluid{
-  margin: 0 auto;
-  .row {
-    margin: 0;
-    .col {
-      max-width: 600px;
-      #single_tank_map {
-        h2 {
-          font-weight: 700;
-          color: $dark_gray;
-        }
-        .single_tank_info {
-          margin: 0 2em 0 2em;
-          background-color: rgba(89,89,89,0.90);
-          border-radius: .5em;
-          color: $white;
-          padding: 1em;
-          span {
+.show_tank_wrapper {
+  width: 100%;
+  .container-fluid{
+    border-radius: .5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #ededed;
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    .row {
+      margin: 0;
+      .col {
+        max-width: 600px;
+        #single_tank_map {
+          h2 {
             font-weight: 700;
-            color: $light_gray;
+            color: $dark_gray;
+          }
+          .single_tank_info {
+            margin: 0 2em 0 2em;
+            background-color: rgba(89,89,89,0.90);
+            border-radius: .5em;
+            color: $white;
+            padding: 1em;
+            span {
+              font-weight: 700;
+              color: $light_gray;
+            }
+          }
+          .map_title, .add_a_tank {
+            display: none;
+          }
+          #map_section {
+            padding: 0em 0;
+            border: none;
           }
         }
-        .map_title, .add_a_tank {
-          display: none;
-        }
-        #map_section {
-          padding: 0em 0;
-          border: none;
-        }
       }
-    }
 
-    .col {
-      max-width: 600px;
-      .button_to {
-        margin-top: 1em;
+      .col {
+        max-width: 600px;
+        .button_to {
+          margin-top: 1em;
+        }
+        #single_tank_photos {
+          h2 {
+            font-weight: 700;
+            color: $dark_gray;
+          }
+          .button {
+            border: none;
+            outline: none;
+            padding: 1em 1.5em;
+            border-radius: 2em;
+            background: $highlight;
+            color: $white;
+            font-weight: 700;
+            font-size: .9em;
+            margin-top: 1em;
+            }
+            .add_photo {
+              border-top: 1px solid #d4d4d4;
+              h3{
+                margin-top: 1em;
+                font-weight: 700;
+                color: $dark_gray;
+              }
+            }
+        #display-single-tank-photos {
+          .row {
+            .tank_info_wrapper {
+              margin: 0 auto;
+              position: relative;
+               margin-bottom: 2.5%;
+               img {
+                 width:100%;
+                 border-radius: .5em;
+               }
+               .tank_info {
+                 font-size: .75em;
+                 font-weight: 700;
+                 color: $secondary;
+                 margin: 0.8em;
+                 padding: .3em;
+                 border-radius: .5em;
+                 top: 0;
+              	 left: 0;
+              	 position: absolute;
+                 background: $light_gray;
+                 opacity: .7;
+                 i {
+                   opacity: 1;
+                 }
+                 .photo_credit {
+                   opacity: 1;
+                 }
+               }
+               .voting {
+                 float:right;
+                 margin: .5em;
+                 padding: 0em 0.6em 0.2em 0.6em;
+                 background: $light_gray;
+                 opacity: .7;
+                 border-radius: .5em;
+                 width: 40px;
+                 position: absolute;
+                 top: 0;
+    	           right: 0%;
+                 .vote_counter {
+                   margin: 0 auto;
+                   a {
+                     opacity: 1;
+                     color: $secondary;
+                     font-size: 80%;
+                     font-weight: 700;
+                   }
+                   i {
+                     opacity: 1;
+                     color: $red;
+                     font-size: 80%;
+                   }
+                   .vote_count {
+                     opacity: 1;
+                     color: $secondary;
+                     font-size: 80%;
+                     font-weight: 700;
+                   }
+                 }
+               }
+            }
+          }
+        }
       }
-      #single_tank_photos {
-        h2 {
+      .comments {
+        border-top: 1px solid #d4d4d4;
+        margin: 1em 0 0 0;
+        padding-bottom: 1em;
+        h3 {
+          margin-top: 1em;
+          color: $dark_gray;
+          text-align: center;
           font-weight: 700;
+        }
+        .comment {
           color: $dark_gray;
         }
         .button {
           border: none;
           outline: none;
-          padding: 1em 1.5em;
+          padding: 1em 4.5em;
           border-radius: 2em;
           background: $highlight;
           color: $white;
           font-weight: 700;
           font-size: .9em;
           margin-top: 1em;
+          width: 300px;
           }
-          .add_photo {
-            border-top: 1px solid #d4d4d4;
-            h3{
-              margin-top: 1em;
-              font-weight: 700;
-              color: $dark_gray;
-            }
-          }
-      #display-single-tank-photos {
-        .row {
-          .tank_info_wrapper {
-            margin: 0 auto;
-            position: relative;
-             margin-bottom: 2.5%;
-             img {
-               width:100%;
-               border-radius: .5em;
-             }
-             .tank_info {
-               font-size: .75em;
-               font-weight: 700;
-               color: $secondary;
-               margin: 0.8em;
-               padding: .3em;
-               border-radius: .5em;
-               top: 0;
-            	 left: 0;
-            	 position: absolute;
-               background: $light_gray;
-               opacity: .7;
-               i {
-                 opacity: 1;
-               }
-               .photo_credit {
-                 opacity: 1;
-               }
-             }
-             .voting {
-               float:right;
-               margin: .5em;
-               padding: 0em 0.6em 0.2em 0.6em;
-               background: $light_gray;
-               opacity: .7;
-               border-radius: .5em;
-               width: 40px;
-               position: absolute;
-               top: 0;
-  	           right: 0%;
-               .vote_counter {
-                 margin: 0 auto;
-                 a {
-                   opacity: 1;
-                   color: $secondary;
-                   font-size: 80%;
-                   font-weight: 700;
-                 }
-                 i {
-                   opacity: 1;
-                   color: $red;
-                   font-size: 80%;
-                 }
-                 .vote_count {
-                   opacity: 1;
-                   color: $secondary;
-                   font-size: 80%;
-                   font-weight: 700;
-                 }
-               }
-             }
-          }
-        }
       }
-    }
-    .comments {
-      border-top: 1px solid #d4d4d4;
-      margin: 1em 0 0 0;
-      padding-bottom: 1em;
-      h3 {
-        margin-top: 1em;
-        color: $dark_gray;
-        text-align: center;
-        font-weight: 700;
       }
-      .comment {
-        color: $dark_gray;
-      }
-      .button {
-        border: none;
-        outline: none;
-        padding: 1em 4.5em;
-        border-radius: 2em;
-        background: $highlight;
-        color: $white;
-        font-weight: 700;
-        font-size: .9em;
-        margin-top: 1em;
-        width: 300px;
-        }
-    }
     }
   }
 }

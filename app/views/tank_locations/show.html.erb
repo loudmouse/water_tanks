@@ -1,73 +1,75 @@
-<div class="container-fluid text-center">
-  <div class="row">
-    <div class="col">
-			<section id="single_tank_map">
-        <h2>Tank Info</h2>
+<div class ="show_tank_wrapper">
+  <div class="container-fluid text-center">
+    <div class="row">
+      <div class="col">
+  			<section id="single_tank_map">
+          <h2>Tank Info</h2>
 
-				<div class="single_tank_info">
-					<p><span>Address:</span><br><%= @tank_location.address %></p>
-					<p><span>Neighborhood:</span><br><%= @tank_location.neighborhood %></p>
-					<p><span>Mapped By:</span><br><%= @tank_location.user.user_name %></p>
-				</div>
+  				<div class="single_tank_info">
+  					<p><span>Address:</span><br><%= @tank_location.address %></p>
+  					<p><span>Neighborhood:</span><br><%= @tank_location.neighborhood %></p>
+  					<p><span>Mapped By:</span><br><%= @tank_location.user.user_name %></p>
+  				</div>
 
-				<%= render "layouts/map" %>
+  				<%= render "layouts/map" %>
 
 
 
-			</section>
-    </div>
-    <div class="col">
-			<section id="single_tank_photos" >
-          <h2><%= @tank_location.photos.count %> <%=  "Photo".pluralize(@tank_location.photos.count) %></h2>
-
-					<div id="display-single-tank-photos">
-
-						<div class="row">
-							<% @tank_location.photos.order(:cached_votes_up => :desc).each do |photo| %>
-
-								<div class="tank_info_wrapper">
-									<div class="tank-image">
-										<%= image_tag photo.image.url(:medium) %>
-										<% if current_user && current_user.photos.include?(photo) %>
-											<%= button_to "Delete Your Photo", tank_location_photo_path(@tank_location, photo), method: :delete, data: { confirm: "Are you sure?" } %>
-										<% end %>
-									</div>
-										<p class="tank_info"><i class="fa fa-camera" aria-hidden="true"></i>  <span class="photo_credit"><%= photo.user.user_name  %></span> </p>
-									<% if current_user %>
-										<div class="voting">
-											<div class="vote_counter">
-												<%= link_to like_photo_path(photo), method: 'PUT' do %>
-													<i class="fa fa-heart" aria-hidden="true"></i> <span class="vote_count"><%= photo.get_upvotes.size %> </span>
-												<% end %>
-											</div>
-										</div>
-									<% end  %>
-
-									<% if !current_user %>
-										<div class="voting">
-											<div class="vote_counter">
-													<i class="fa fa-heart" aria-hidden="true"></i> <span class="vote_count"><%= photo.get_upvotes.size %> </span>
-											</div>
-										</div>
-									<% end  %>
-
-								</div>
-
-							<% end %>
-					</div>
-
-      <div class="add_photo">
-        <h3>Add a Photo</h3>
-  			<%= render partial: "photos/form", locals: {tank_location: @tank_location} %>
+  			</section>
       </div>
+      <div class="col">
+  			<section id="single_tank_photos" >
+            <h2><%= @tank_location.photos.count %> <%=  "Photo".pluralize(@tank_location.photos.count) %></h2>
 
-			</section>
+  					<div id="display-single-tank-photos">
 
-			<div class="comments">
-				<%= render partial: "comments/comments", locals: {commentable: @tank_location} %>
-				<%= render partial: "comments/form", locals: {commentable: @tank_location} %>
-			</div>
+  						<div class="row">
+  							<% @tank_location.photos.order(:cached_votes_up => :desc).each do |photo| %>
 
+  								<div class="tank_info_wrapper">
+  									<div class="tank-image">
+  										<%= image_tag photo.image.url(:medium) %>
+  										<% if current_user && current_user.photos.include?(photo) %>
+  											<%= button_to "Delete Your Photo", tank_location_photo_path(@tank_location, photo), method: :delete, data: { confirm: "Are you sure?" } %>
+  										<% end %>
+  									</div>
+  										<p class="tank_info"><i class="fa fa-camera" aria-hidden="true"></i>  <span class="photo_credit"><%= photo.user.user_name  %></span> </p>
+  									<% if current_user %>
+  										<div class="voting">
+  											<div class="vote_counter">
+  												<%= link_to like_photo_path(photo), method: 'PUT' do %>
+  													<i class="fa fa-heart" aria-hidden="true"></i> <span class="vote_count"><%= photo.get_upvotes.size %> </span>
+  												<% end %>
+  											</div>
+  										</div>
+  									<% end  %>
+
+  									<% if !current_user %>
+  										<div class="voting">
+  											<div class="vote_counter">
+  													<i class="fa fa-heart" aria-hidden="true"></i> <span class="vote_count"><%= photo.get_upvotes.size %> </span>
+  											</div>
+  										</div>
+  									<% end  %>
+
+  								</div>
+
+  							<% end %>
+  					</div>
+
+        <div class="add_photo">
+          <h3>Add a Photo</h3>
+    			<%= render partial: "photos/form", locals: {tank_location: @tank_location} %>
+        </div>
+
+  			</section>
+
+  			<div class="comments">
+  				<%= render partial: "comments/comments", locals: {commentable: @tank_location} %>
+  				<%= render partial: "comments/form", locals: {commentable: @tank_location} %>
+  			</div>
+
+      </div>
     </div>
   </div>
-</div>
+</div> 
