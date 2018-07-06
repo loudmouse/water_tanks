@@ -1,42 +1,77 @@
+
 <div class="wrapper">
   <div class="profile-wrapper">
-    <div class="profile-container">
-      <div class="profile-row clearfix">
-        <div class="profile-photo"><%= image_tag @user.profile_photo.url(:medium) %></div>
-        <div class="profile-username"><h3>Hi, <%= @user.user_name %></h3>.</div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="profile-photo text-center"><%= image_tag @user.profile_photo.url(:medium) %></div>
+          <div class="profile-username text-center"><h3><%= @user.user_name %></h3></div>
+        </div>
       </div>
       <% if @user.tank_locations.count > 0 %>
-      <div class="profile-stats-row clearfix">
-        <div class="user-mapped-count"><span><i class="fa fa-map-marker" aria-hidden="true"></i><%= @user.tank_locations.count %></span> Tanks Mapped</div>
-        <div class="user-photo-count"><span><i class="fa fa-camera" aria-hidden="true"></i><%= @user.photos.count %></span> Photos Added</div>
+      <div class="row text-center">
+        <div class="col">
+          <div class="user-mapped-count"><span><i class="fa fa-map-marker" aria-hidden="true"></i><%= @user.tank_locations.count %></span> Tanks Mapped</div>
+          <div class="user-photo-count"><span><i class="fa fa-camera" aria-hidden="true"></i><%= @user.photos.count %></span> Photos Added</div>
+        </div>
       </div>
-      <div class="mapped-tanks-section clearfix">
-        <div class="recent-activity-row clearfix">
-          <div class="recent-activity"><h6>Active <span><%= time_ago_in_words(@user.photos.last.created_at) %> ago</span> in</h6></div>
-          <div class="latest-neighborhood"><h6><%= @user.photos.last.tank_location.neighborhood %></h6></div>
+      <div class="row text-center">
+        <div class="col">
+          <div class="recent-activity"><h6>Mapped <span><%= time_ago_in_words(@user.photos.last.created_at) %> ago</span> in <%= @user.photos.last.tank_location.neighborhood %> </h6></div>
           <div class="recent-tank-photo"><%= image_tag @user.photos.last.image.url(:medium) %></div>
         </div>
-        <div class="users-tanks clearfix">
-          <div class="mapped-tank-title"><h2><%= @user.user_name %>'s Mapped Tanks</h2></div>
-          <% @user_tanks_mapped.each do |tank| %>
-          <ul>
-            <li><%= link_to tank.address, tank_location_path(tank) %></li>
-          </ul>
-          <% end %>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mapped-tank-title text-center"><h2><%= @user.user_name %>'s Mapped Tanks</h2></div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Address</th>
+                <th class="text-center" scope="col">Neighborhood</th>
+                <th class="text-center" scope="col">More</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @user_tanks_mapped.each do |tank| %>
+              <tr>
+                <td><%= tank.address %></td>
+                <td class="text-center"><%= tank.neighborhood %></td>
+                <td class="text-center"><%= link_to "View", tank_location_path(tank) %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
         </div>
       </div>
-    </div>
-
-    <%= render "layouts/map" %>
-    <% end %>
-
-
-    <div class="start-your-profile">
-      <% if @user.tank_locations.count < 1 %>
-        <h3>Map a Tank to Unlock Your Profile</h3>
-        <%= link_to "Add a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "button" %>
+      <div class="row">
+        <div class="col">
+          <%= render "layouts/map" %>
+        </div>
+      </div>
       <% end %>
-    </div>
 
+      <div class="start-your-profile">
+        <% if @user.tank_locations.count < 1 %>
+          <h3>Map a Tank to Unlock Your Profile</h3>
+          <%= link_to "Add a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "button" %>
+        <% end %>
+      </div>
+
+      <div class="tank-photos-title text-center"><h2><%= @user.user_name %>'s Photos</h2></div>
+      <% @photos.each_slice(4) do |photo| %>
+      <div class="row text-center">
+          <% photo.each do |photo| %>
+            <div class="col-md-3 tank-images">
+                <%= image_tag photo.image.url(:medium) %>
+            </div>
+          <% end %>
+      </div>
+      <% end %>
+
+
+
+
+    </div>
   </div>
 </div>
