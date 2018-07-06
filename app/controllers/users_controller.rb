@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_tanks_mapped = @user.tank_locations
     make_markers(@user_tanks_mapped)
+    @photos = User.find(params[:id]).photos
   end
 
   def destroy

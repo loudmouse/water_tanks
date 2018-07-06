@@ -1,198 +1,97 @@
 .profile-wrapper {
-  margin: 0 auto;
-  width: 700px;
   padding: 1em;
-  .profile-row {
-    .profile-photo img {
-      float: left;
-      width: 80px;
-      border-radius: 1em;
-    }
-    .profile-username h3 {
-      float: right;
-      text-transform: uppercase;
-      font-size: 1.5em;
-      font-weight: 700;
-      vertical-align: middle;
-      line-height: 80px;
-      color: $secondary;
-    }
-  }
-
-  .profile-stats-row {
-    background: $highlight;
-    color: $white;
-    padding: 1em;
-    margin: 1em 0 1em 0;
-
-    .user-mapped-count {
-      float: left;
-      margin-left: .2em;
-      font-weight: 700;
-      span {
-        font-weight: 700;
-        font-size: 1.2em;
-      }
-      i {
-        margin-right: 1em;
-      }
-    }
-    .user-photo-count {
-      float: right;
-      margin-right: .2em;
-      font-weight: 700;
-      span {
-        font-weight: 700;
-        font-size: 1.2em;
-      }
-      i {
-        margin-right: 1em;
-      }
-    }
-  }
-
-  .recent-tank-photo img {
-    margin: 0 auto;
-    display: block;
-    width: 250px;
-  }
-  .recent-activity-row {
-    float: left;
-  }
-  .recent-activity-row {
-    .recent-activity, .latest-neighborhood {
-      h6 {
-        text-align: center;
-      }
-    }
-    .recent-activity h6 {
-      font-size: .8em;
-      span {
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 1em;
-      }
-    }
-    .latest-neighborhood {
-      text-transform: uppercase;
-    }
-  }
-  .users-tanks {
-    float: right;
-    padding-right: 1em;
-    .mapped-tank-title {
-      h2 {
-        text-align: center;
-        font-size: 1em;
-        text-transform: uppercase;
-        font-weight: 700;
-
-        margin-bottom: 1em;
-        margin-bottom: 1em;
-      }
-    }
-    ul {
-      list-style-type: none;
-      li {
-        line-height: .5em;
-        a {
-          color: $secondary;
-          text-decoration: none;
+  .container {
+    border-radius: .5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #ededed;
+    padding: 2em;
+    .row {
+      .col {
+        .profile-photo img {
+          width: 9em;
+          border-radius: 1em;
         }
-      }
-    }
-  }
-}
-
-.start-your-profile {
-  text-align: center;
-  padding-bottom: 5em;
-  h3 {
-    padding: 2em 0 2em 0;
-    font-size: 1.2em;
-    font-weight: 700;
-    color: $secondary;
-  }
-  .button {
-    margin:  0 auto;
-    width: 100px;
-    margin: 0 auto;
-    border: none;
-    outline: none;
-    padding: 1em 2em;
-    border-radius: 2em;
-    background: $highlight;
-    color: $white;
-    font-weight: 700;
-    font-size: 1em;
-    &:hover {
-      background: $dark_highlight;
-      text-decoration: none;
-      color: $off_white;
-    }
-  }
-}
-
-
-@media only screen and (max-width: 575px) {
-
-  .profile-wrapper {
-    margin: 0 auto;
-    width: 300px;
-    background: #d7d7d7;
-    padding: 1em;
-    .recent-tank-photo img {
-      margin: 0 auto;
-      display: block;
-      width: 250px;
-    }
-    .recent-activity-row {
-      .recent-activity, .latest-neighborhood {
-        h6 {
-          text-align: center;
-        }
-      }
-      .recent-activity h6 {
-        font-size: .8em;
-        span {
+        .profile-username h3 {
+          margin-top: 1em;
           text-transform: uppercase;
+          font-size: 1.5em;
           font-weight: 700;
-          font-size: 1em;
+          vertical-align: middle;
+          color: $secondary;
+        }
+      }
+      .col {
+        .user-mapped-count, .user-photo-count {
+          font-weight: 700;
+          color: $secondary;
+          .fa {
+            margin-right: .5em;
+          }
+        }
+      }
+      .col {
+        .recent-activity, .recent-tank-photo {
+          margin-top: 1em;
+          h6{
+            font-weight: 700;
+            font-size: .7em;
+            color: $secondary;
+          }
+          img {
+            width: 9em;
+            border-radius: 1em;
+          }
+        }
+      }
+      .col  {
+        .mapped-tank-title {
+          h2 {
+            margin-top: 3em;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: $secondary;
+            text-transform: lowercase;
+          }
+        }
+        .table thead th {
+          font-weight: 700;
+          font-size: .9em;
+          color: $secondary;
+        }
+        .table td {
+          font-size: .7em;
+          font-weight: 700;
+          color: $secondary;
         }
       }
     }
-    .profile-stats-row {
-      border-top: 1px solid #303030;
-      border-bottom: 1px solid #303030;
-      .user-mapped-count {
-        float: left;
-        margin-left: .2em;
-        span {
-          font-weight: 700;
-        }
-      }
-      .user-photo-count {
-        float: right;
-        margin-right: .2em;
-        span {
-          font-weight: 700;
+    .row {
+      .col {
+        #map_section {
+          margin-top: -6em;
+          .map_title, .add_a_tank {
+            display: none;
+          }
         }
       }
     }
-    .profile-row {
-      .profile-photo img {
-        float: left;
-        width: 100px;
-        border-radius: 1em;
+    .row {
+      .tank-images{
+        img {
+          width: 9em;
+          border-radius: .5em;
+          margin-bottom: .5em;
+        }
       }
-      .profile-username h3 {
-        float: right;
-        text-transform: uppercase;
-        font-size: 1.3em;
+    }
+    .tank-photos-title{
+      h2 {
+        margin-top: 3em;
         font-weight: 700;
-
+        font-size: 1.2em;
+        color: $secondary;
+        text-transform: lowercase;
       }
     }
   }
-
 }
