@@ -123,6 +123,8 @@ This is the homepage where you see the most recently mapped tank, the map of tan
 
 ![Chicago Water Tanks - Home](/app/assets/images/screenshots/chicago_water_tanks_home_screenshot.png)
 
+---
+
 **Map a Water Tank**
 
 Click 'Add a Water Tank' to map the location of a new water tank and add your photo.
@@ -136,3 +138,15 @@ Click 'Add a Water Tank' to map the location of a new water tank and add your ph
 Congratulations, you've successfully mapped a water tank and added a photo!
 
 ![Chicago Water Tanks - Add a Tank](/app/assets/images/screenshots/add_a_tank_screenshot.png)
+
+---
+
+**Unlock Your Profile**
+
+Once you've created an account you'll gain access to your profile once you've mapped a water tank.
+From your profile you can:
+- See how many water tanks you've mapped
+- Check how many photos you've contributed
+- See a map with all the water tanks you've mapped
+
+![Chicago Water Tanks - Unlock Your Profile](/app/assets/images/screenshots/#.png)
