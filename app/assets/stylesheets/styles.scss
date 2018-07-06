@@ -349,6 +349,7 @@ h1, h2, h3, h4, h5, h6 {
          background: $highlight;
          border-radius: .5em;
          display: block;
+         border-color: $highlight;
          a {
            color: $white;
            font-size: .75em;
