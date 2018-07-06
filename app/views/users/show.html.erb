@@ -49,14 +49,6 @@
           <%= render "layouts/map" %>
         </div>
       </div>
-      <% end %>
-
-      <div class="start-your-profile">
-        <% if @user.tank_locations.count < 1 %>
-          <h3>Map a Tank to Unlock Your Profile</h3>
-          <%= link_to "Add a Water Tank", new_tank_location_path(anchor: 'map-a-tank'), class: "button" %>
-        <% end %>
-      </div>
 
       <div class="tank-photos-title text-center"><h2><%= @user.user_name %>'s Photos</h2></div>
       <% @photos.each_slice(4) do |photo| %>
@@ -69,8 +61,13 @@
       </div>
       <% end %>
 
+    <% end %>
 
-
+      <div class="start-your-profile text-center">
+        <% if @user.tank_locations.count < 1 %>
+          <%= link_to "Map a Tank to Unlock Your Profile", new_tank_location_path(anchor: 'map-a-tank'), class: "button" %>
+        <% end %>
+      </div>
 
     </div>
   </div>
