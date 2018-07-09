@@ -24,7 +24,7 @@ function allowPinDropToSetLocation(map) {
           map: map.getMap()
         })
 
-  neighborhoodOverlayLayer.addListener('mousedown', (kmlEvent) => {
+  neighborhoodOverlayLayer.addListener('click', (kmlEvent) => {
 
     if(lastMarker){
       lastMarker.setMap(null)
