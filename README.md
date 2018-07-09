@@ -96,7 +96,7 @@ We're currently deployed to Heroku. You can setup a free Heroku account and depl
 * [Acts as Votable](https://rubygems.org/gems/acts_as_votable/versions/0.10.0) - Ruby gem used to allow voting of favorite water tank photos
 * [Will Paginate](https://rubygems.org/gems/will_paginate/versions/3.1.6) - Ruby gem used to paginate the list of water tank locations
 * [SCSS (Sassy CSS)](https://sass-lang.com/) - The CSS syntax used for front-end styling
-* [Bootstrap)](https://rubygems.org/gems/bootstrap/versions/4.0.0) - CSS framework used for styling certain sections of the application
+* [Bootstrap](https://rubygems.org/gems/bootstrap/versions/4.0.0) - CSS framework used for styling certain sections of the application
 
 ---
 
