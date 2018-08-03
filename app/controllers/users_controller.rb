@@ -7,6 +7,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if request.path != user_path(@user)
+      return redirect_to @user, status: :moved_permanently
+    end
     @user_tanks_mapped = @user.tank_locations
     make_markers(@user_tanks_mapped)
     @photos = User.find(params[:id]).photos
