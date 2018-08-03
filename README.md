@@ -97,6 +97,7 @@ We're currently deployed to Heroku. You can setup a free Heroku account and depl
 * [Will Paginate](https://rubygems.org/gems/will_paginate/versions/3.1.6) - Ruby gem used to paginate the list of water tank locations
 * [SCSS (Sassy CSS)](https://sass-lang.com/) - The CSS syntax used for front-end styling
 * [Bootstrap](https://rubygems.org/gems/bootstrap/versions/4.0.0) - CSS framework used for styling certain sections of the application
+* [FriendlyID](https://rubygems.org/gems/friendly_id/versions/5.1.0) - a ruby gem used to create human readable slugs/permalinks. For this app we're using it for usernames so instead of navigating to, for example, /users/1 it will now read as /users/loudmouse and provide automatic redirects if you attempt to visit the old link.
 
 ---
 
