@@ -1,0 +1,25 @@
+.container {
+    position: relative;
+    line-height: .6;
+    color: $dark_gray;
+    img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 2em;
+        // opacity: 0.3;
+    }
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    h1, a {
+      font-weight: 700;
+    }
+    a {
+      text-transform: uppercase;
+    }
+}

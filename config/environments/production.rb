@@ -100,4 +100,7 @@ Rails.application.configure do
       s3_host_name: ENV.fetch('AWS_S3_HOST_NAME'),
     }
   }
+  
+  # For dynamic error pages
+  config.exceptions_app = self.routes
 end
