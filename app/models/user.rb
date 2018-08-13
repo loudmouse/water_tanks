@@ -18,5 +18,6 @@ class User < ApplicationRecord
 
   acts_as_voter
   validates :user_name, uniqueness: true
+  validates_presence_of :user_name
 
 end
