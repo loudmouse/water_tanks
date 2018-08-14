@@ -1,3 +1,5 @@
+# https://github.com/thoughtbot/shoulda-matchers
+
 require 'rails_helper'
 
 RSpec.describe TankLocation, type: :model do
