@@ -62,7 +62,7 @@ class TankLocationsController < ApplicationController
                       :width  => "32",
                       :height => "32"
                      })
-          end 
+          end
         end
     end
 

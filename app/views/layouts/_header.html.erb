@@ -1,8 +1,10 @@
 <section id="banner" class="clearfix">
   <div id="banner_content_wrapper">
+    <% if @latest_tank != nil %>
     <div class="featured_tank_wrapper">
       <div id="featured_tank">
         <%= image_tag @latest_tank.photos.first.image.url(:medium), class: "featured_tank_image" %>
+
       </div>
       <div id="content">
         <h2 class="title"><%= @latest_tank.address %></h2>
@@ -10,5 +12,6 @@
         <p class="info">Mapped by <%= @latest_tank.user.user_name %> on <%= @latest_tank.created_at.to_date %></p>
       </div>
     </div>
+    <% end %>
   </div>
 </section>
