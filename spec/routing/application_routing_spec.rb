@@ -15,5 +15,9 @@ RSpec.describe ApplicationController, type: :routing do
       expect(:get => "/users/sign_up").to route_to("registrations#new")
     end
 
+    it "routes to user edit profile" do
+      expect(:get => "/users/edit").to route_to("registrations#edit")
+    end
+
   end
 end
