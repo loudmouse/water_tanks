@@ -11,5 +11,9 @@ RSpec.describe ApplicationController, type: :routing do
       expect(:get => "/users/sign_in").to route_to("devise/sessions#new")
     end
 
+    it "routes to new user sign up" do
+      expect(:get => "/users/sign_up").to route_to("registrations#new")
+    end
+
   end
 end
