@@ -1,3 +1,5 @@
+require 'simplecov'
+SimpleCov.start
 require 'devise'
 require_relative 'support/controller_helpers'
 

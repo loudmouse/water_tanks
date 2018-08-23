@@ -84,3 +84,5 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'rails_admin', '~> 1.3'
 
 gem 'friendly_id', '~> 5.2.0'
+
+gem 'simplecov', require: false, group: :test
