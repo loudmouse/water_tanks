@@ -88,6 +88,11 @@ We're currently deployed to Heroku. You can setup a free Heroku account and depl
 * [GMaps4Rails](https://github.com/apneadiving/Google-Maps-for-Rails) - A gem used for custom markers and overlays; integrates with Google Maps API
 * [Geocoder](http://www.rubygeocoder.com/) - Ruby gem used to convert a water tank's lat/long location coordinates to addresses and vice versa
 * [Chicago Neighborhood KML Overlay - courtesy Chicago Open Data Portal](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Neighborhoods/bbvz-uum9/data) - KML overlay layer used to identify which neighborhood a water tank belongs to
+* [RSpec](https://rubygems.org/gems/rspec-rails/versions/3.4.2) - framework for testing
+* [Shoulda Matchers](https://rubygems.org/gems/shoulda-matchers/versions/3.1.1) - one liners to test common rails functionality
+* [Factory Bot](https://rubygems.org/gems/factory_bot/versions/4.8.2) - Ruby library used to build factories for generating fixtures for testing
+* [Faker](https://rubygems.org/gems/faker/versions/1.6.3) - used to generate fake data for testing
+* [SimpleCov](https://rubygems.org/gems/simplecov/versions/0.12.0) - code coverage analysis
 * [PostgreSQL](https://www.postgresql.org/) - The database used with ActiveRecord
 * [Devise](https://rubygems.org/gems/devise/versions/4.2.0) - The Ruby Gem used for authentication
 * [Rails Admin](https://rubygems.org/gems/rails_admin/versions/0.8.1) - Ruby gem provides easy-to-use admin interface for CRUD actions for non-technical users. We can grant admin rights to other users to help us moderate the community contributions.
