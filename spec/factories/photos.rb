@@ -4,7 +4,7 @@ FactoryBot.define do
     image_content_type "image/jpeg"
     image_file_size 36256
     user
-    tank_location
+    
 
     # after :create do
     #   association :user, factory: :user
