@@ -18,14 +18,11 @@ describe 'Feature Test: User Sign Up', type: :feature do
     expect(page).to have_content("Email can't be blank")
   end
 
-  it 'does not allow user account creation with mismatched password confirmation' do
+  it 'does not allow account creation without a password' do
     visit '/users/sign_up'
     fill_in("user[user_name]", with: "loudmouse")
-    fill_in("user[email]", with: "nolan@example.com")
-    fill_in("user[password]", with: "Password1234")
-    fill_in("user[password_confirmation]", with: "passwordTYPO")
     click_button("Sign Up")
-    expect(page).to have_content("Password confirmation doesn't match Password")
+    expect(page).to have_content("Password can't be blank")
   end
 
 end
