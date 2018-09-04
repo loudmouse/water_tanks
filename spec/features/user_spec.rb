@@ -46,3 +46,18 @@ describe 'Feature Test: User Sign Up', type: :feature do
   end
 
 end
+
+describe 'Feature Test: User Login', type: :feature do
+
+  before :each do
+    @user = User.create(email: "nolan@example.com", password: "Password1234", password_confirmation: "Password1234")
+  end
+
+  it 'does not allow a user to log in without email' do
+    visit '/users/sign_in'
+    fill_in("user[password]", with: "Password1234")
+    click_button("Sign In")
+    expect(page).to have_content("Invalid Email or password")
+  end
+
+end
