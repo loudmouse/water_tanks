@@ -60,4 +60,11 @@ describe 'Feature Test: User Login', type: :feature do
     expect(page).to have_content("Invalid Email or password")
   end
 
+  it 'does not allow a user to log in without a password' do
+    visit '/users/sign_in'
+    fill_in("user[email]", with: "nolan@example.com")
+    click_button("Sign In")
+    expect(page).to have_content("Invalid Email or password")
+  end
+
 end
