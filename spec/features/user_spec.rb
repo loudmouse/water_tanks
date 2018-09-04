@@ -56,15 +56,24 @@ describe 'Feature Test: User Login', type: :feature do
   it 'does not allow a user to log in without email' do
     visit '/users/sign_in'
     fill_in("user[password]", with: "Password1234")
-    click_button("Sign In")
+    click_button("Submit")
     expect(page).to have_content("Invalid Email or password")
   end
 
   it 'does not allow a user to log in without a password' do
     visit '/users/sign_in'
     fill_in("user[email]", with: "nolan@example.com")
-    click_button("Sign In")
+    click_button("Submit")
     expect(page).to have_content("Invalid Email or password")
+  end
+
+  it 'redirects to homepage if login successful' do
+    visit '/users/sign_in'
+    fill_in("user[email]", with: "nolan@example.com")
+    fill_in("user[password]", with: "Password1234")
+    click_button("Submit")
+    expect(current_path).to eql(root_path)
+    # expect(page).to have_content("Map of Water Tanks")
   end
 
 end
