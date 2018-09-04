@@ -9,4 +9,13 @@ describe 'Feature Test: User Sign Up', type: :feature do
     expect(page).to have_content("Help Us Map Chicago's Historic Water Tanks")
   end
 
+  it 'does not allow user account creation without an email' do
+    visit '/users/sign_up'
+    fill_in("user[user_name]", with: "loudmouse")
+    fill_in("user[password]", with: "Password1234")
+    fill_in("user[password_confirmation]", with: "Password1234")
+    click_button("Sign Up")
+    expect(page).to have_content("Email can't be blank")
+  end
+
 end
