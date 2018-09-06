@@ -82,6 +82,17 @@ describe 'Feature Test: User Sign In', type: :feature do
     click_button("Submit")
     visit '/users/sign_in'
     expect(current_path).to eql(root_path)
+    expect(page).to have_content("You are already signed in.")
+  end
+
+  it 'sends user to root when visiting sign up if already logged in' do
+    visit '/users/sign_in'
+    fill_in("user[email]", with: "nolan@example.com")
+    fill_in("user[password]", with: "Password1234")
+    click_button("Submit")
+    visit '/users/sign_up'
+    expect(current_path).to eql(root_path)
+    expect(page).to have_content("You are already signed in.")
   end
 
 end
