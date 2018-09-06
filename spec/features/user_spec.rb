@@ -50,7 +50,7 @@ end
 describe 'Feature Test: User Login', type: :feature do
 
   before :each do
-    @user = User.create(email: "nolan@example.com", password: "Password1234", password_confirmation: "Password1234")
+    @user = User.create(email: "nolan@example.com", user_name: "loudmouse", password: "Password1234", password_confirmation: "Password1234")
   end
 
   it 'does not allow a user to log in without email' do
@@ -73,7 +73,15 @@ describe 'Feature Test: User Login', type: :feature do
     fill_in("user[password]", with: "Password1234")
     click_button("Submit")
     expect(current_path).to eql(root_path)
-    # expect(page).to have_content("Map of Water Tanks")
+  end
+
+  it 'sends user to root when visiting sign in if already logged in' do
+    visit '/users/sign_in'
+    fill_in("user[email]", with: "nolan@example.com")
+    fill_in("user[password]", with: "Password1234")
+    click_button("Submit")
+    visit '/users/sign_in'
+    expect(current_path).to eql(root_path)
   end
 
 end
