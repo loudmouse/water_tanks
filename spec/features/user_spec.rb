@@ -47,7 +47,7 @@ describe 'Feature Test: User Sign Up', type: :feature do
 
 end
 
-describe 'Feature Test: User Login', type: :feature do
+describe 'Feature Test: User Sign In', type: :feature do
 
   before :each do
     @user = User.create(email: "nolan@example.com", user_name: "loudmouse", password: "Password1234", password_confirmation: "Password1234")
