@@ -97,7 +97,7 @@ describe 'Feature Test: User Sign In', type: :feature do
 
 end
 
-describe 'Feature Test: Users Homepage', type: :feature do
+describe 'Feature Test: Users Homepage with Zero Tank Locations', type: :feature do
 
   before :each do
     @user = User.create(id: 1, email: "nolan@example.com", user_name: "loudmouse", password: "Password1234", password_confirmation: "Password1234")
