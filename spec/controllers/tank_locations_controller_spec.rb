@@ -18,24 +18,6 @@ RSpec.describe TankLocationsController, type: :controller do
 
     end
 
-    context "When the user is logged in" do
-      before { login_with }
-
-      it "returns a success response" do
-        subject
-        expect(response).to be_success
-      end
-    end
   end
-
-
-  # context 'when logged in' do
-  #   before { login_with(:user) }
-  #   it "returns a successful response" do
-  #     get :new
-  #     expect(response).to be_success
-  #   end
-  # end
-
-
+  
 end
