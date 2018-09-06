@@ -96,3 +96,22 @@ describe 'Feature Test: User Sign In', type: :feature do
   end
 
 end
+
+describe 'Feature Test: Users Homepage', type: :feature do
+
+  before :each do
+    @user = User.create(id: 1, email: "nolan@example.com", user_name: "loudmouse", password: "Password1234", password_confirmation: "Password1234")
+  end
+
+  it 'tells user to map a tank to unlock profile' do
+    visit '/users/sign_in'
+    fill_in("user[email]", with: "nolan@example.com")
+    fill_in("user[password]", with: "Password1234")
+    click_button("Submit")
+    expect(current_path).to eql(root_path)
+    click_link("My Profile")
+    expect(current_path).to eql("/users/loudmouse")
+    expect(page).to have_content("Map a Tank to Unlock Your Profile")
+  end
+
+end
